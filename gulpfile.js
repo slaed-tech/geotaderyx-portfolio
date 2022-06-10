@@ -2,7 +2,7 @@
 const gulp = require("gulp");
 
 // PATH
-const PROJECT_FOLDER = require("path").basename(__dirname);
+const PROJECT_FOLDER = "root";
 const SOURCE_FOLDER  = "#src";
 
 let path = {
