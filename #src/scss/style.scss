@@ -15,9 +15,38 @@
 @import "normalize";
 
 // VARS
+$bg_color: #E4E4E4;
+$body_color: #070707;
+
+$body_fs: 28px;
+$light-title_fs: 18px;
+$strong-title_fs: 100px;
+$h1-title_fs: 185px;
+
+$col_w: 310px;
 // ANIMATIONS
 // TEMPLATES
 // MIXINS
+@mixin clearfix { 
+	*zoom:1;
+    &:before, &:after { 
+		content: ""; 
+		display: table; 
+	}
+    &:after { 
+		clear: both; 
+	}
+}
+
+@mixin colmargins($n) {
+    &::after {
+        content: "";
+        width: 100%;
+        
+        $temp: calc($col_w * $n);
+        margin-right: $temp;
+    }
+}
 
 //! MAIN STYLE
 *,
@@ -39,8 +68,10 @@ html {
 body {
     font-family: 'Helvetica', sans-serif;
     font-weight: 400;
-    color: #333;
-    background-color: #E4E4E4;
+    color: $body_color;
+    background-color: $bg_color;
+    line-height: 80%;
+    font-size: $body_fs;
 }
 
 h1,
@@ -51,10 +82,83 @@ h5,
 h6 {
     font-family: 'Helvetica', sans-serif;
     font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: $h1-title_fs;
+    line-height: 100%;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: $strong-title_fs;
+    line-height: 100%;
+}
+
+h3 {
+    font-size: $light-title_fs;
+}
+
+section, header, footer, main {
+    width: 100%;
+}
+
+main {
+    padding-top: 120px;
 }
 
 .container {
+    max-width: calc(100% - 60px);
     margin: 0 auto;
+}
+
+a.link {
+    @include clearfix;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 18px;
+    overflow: hidden;
+    height: 1em;
+    padding-bottom: 10px;
+	color: $bg_color;
+	font-weight: 400;
+
+    span {
+        position: relative;
+        display: inline-block;
+        transition-duration: .3s;
+        &::before {
+            color: $bg_color;
+            position: absolute;
+            top: 100%;
+            content: attr(data-hover);
+            font-weight: 400;
+            transform: translate3d(0,0,0);
+        }
+    }
+    &:hover{
+        span{
+            transform: translateY(-100%);
+        }
+    }
+}
+
+.light-title {
+    font-size: $light-title_fs;
+}
+
+.strong-title {
+    font-size: $strong-title_fs;
+    font-weight: 300;
+}
+
+.section-id {
+    font-size: $light-title_fs;
+
+    @include colmargins(1);
 }
 
 .list-reset {
@@ -68,4 +172,122 @@ h6 {
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+//* HEADER
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 30px;
+    color: #fff;
+    mix-blend-mode: difference;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .change-theme-btn {
+        display: inline-block;
+        background-color: #fff;
+        height: 14px;
+        width: 14px;
+        border-radius: 100%;
+    }
+}
+
+//* HERO
+#hero {
+    padding-bottom: 80px;
+
+    .hero__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .second_floor .content-left {
+        display: flex;
+        align-items: flex-start;
+        max-width: 30%;
+        
+
+        .light-title {
+            font-size: 16px !important;
+            margin-right: 100px;
+        }
+        .descrpt {
+            font-size: 16px !important;
+        
+            &:nth-child(1) {
+                margin-bottom: 28px;
+            }
+        }
+    }
+    .second_floor .content-right {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: right;
+        justify-content: right;
+
+        img {
+            margin-right: 30px;
+        }
+    }
+}
+
+//* ABOUT ME
+#about-me-photo {
+    padding-bottom: 112px;
+
+    .container {
+        display: flex;
+        align-items: flex-start;
+    }
+    .about-me-photo__wrap {
+        display: flex;
+        flex-direction: column;
+        max-width: 620px;
+    }
+}
+
+#about-me-info {
+    padding-bottom: 80px;
+
+    .container {
+        display: flex;
+        align-items: flex-start;
+    }
+    .section-id {
+        @include colmargins(2);
+    }
+    .about-me-info__wrap {
+        display: flex;
+
+        .light-title {
+            @include colmargins(1);
+        }
+        .text__wrap {
+            display: flex;
+            flex-direction: column;
+            max-width: 426px;
+            @include colmargins(1);
+            
+            &:nth-child(1) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+//! MEDIA REQUESTS
+@media screen and (max-width: 1440px) {
+    h1 {
+        font-size: 40px;
+        color: red;
+    }
+
 }

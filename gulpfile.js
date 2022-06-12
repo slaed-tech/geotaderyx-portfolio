@@ -16,7 +16,7 @@ let path = {
     src: {
         HTML:   [`${SOURCE_FOLDER}/*.html`, `!${SOURCE_FOLDER}/_*.html`],
         CSS:    `${SOURCE_FOLDER}/scss/style.scss`,
-        JS:     `${SOURCE_FOLDER}/js/main.js`,
+        JS:     `${SOURCE_FOLDER}/js/**/*.js`,
         IMG:    `${SOURCE_FOLDER}/img/**/*.+(png|jpg|gif|ico|svg|webp)`,
         FONTS:  `${SOURCE_FOLDER}/fonts/**/*.woff`,
     },
@@ -43,8 +43,8 @@ const { src, dest }  = require("gulp"),
         include      = require("gulp-file-include"),
         uglify_js    = require("gulp-uglify-es").default,
         webp         = require("gulp-webp"),
-        webp_html    = require("gulp-webp-html");
-
+        webp_html    = require("gulp-webp-html"),
+        concat       = require("gulp-concat");
 
 // Functions
 function browserSync() {
@@ -90,17 +90,19 @@ function css() {
 }
 
 function js() {
-    return src(path.src.JS)
-        .pipe(include())
-        .pipe(dest(path.build.JS))
-        .pipe(uglify_js())
-        .pipe(
-            rename({
-                extname: ".min.js",
-            })
-        )
-        .pipe(dest(path.build.JS))
-        .pipe(browsersync.stream());
+    return src([
+        path.src.JS,
+    ])
+    .pipe(include())
+    .pipe(dest(path.build.JS))
+    .pipe(uglify_js())
+    .pipe(
+        rename({
+            extname: ".min.js",
+        })
+    )
+    .pipe(dest(path.build.JS))
+    .pipe(browsersync.stream());
 }
 
 function img() {

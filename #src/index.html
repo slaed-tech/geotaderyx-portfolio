@@ -9,38 +9,99 @@
 </head>
 <body>
     <header id="header">
-        <a href="/" class="logo-btn">geotaderyx</a>
-        <a href="#" class="change-theme-btn"></a>
-        <a href="#" class="contacts-btn">contacts</a>
+        <div class="container">
+            <a href="/" class="logo-btn link"><span data-hover="geotaderyx">geotaderyx</span></a>
+            <a href="#" class="change-theme-btn"></a>
+            <a href="#about-me_photo" class="contacts-btn link"><span data-hover="contacts">contacts</span></a>
+        </div>
     </header>
-    <main id="main">
-        <section id="hero">
-            <div class="first_floor hero__wrap">
-                <h1 class="hero__title">INDEPENTED</h1>
-                <picture><source srcset="img/header-1.webp" type="image/webp"><img src="img/header-1.jpg" alt="workstyle"></picture>
-            </div>
-            <div class="second_floor hero__wrap">
-                <div class="hero-content__wrap content-left">
-                    <p class="light-title">Creativity</p>
-                    <div class="hero-content__wrap">
-                        <p class="light-descrpt">Creativity is when you are given pieces of something trivial and dare to bind it with your "inner" glue. This is when the rules are the exception to your rules. This is when objectivity is tossed like dice in the hope of never seeing them fall. </p>
-                        <p class="light-descrpt">Creative thinking is not a professional activity, but a way to create and strengthen a connection with life. Creativity is not just about painting a picture, writing a novel, or building a house. The main thing is the full awareness of his presence.</p>
+    <div id="butter">
+        <main id="main">
+            <section id="hero">
+                <div class="container">
+                    <div class="first_floor hero__wrap">
+                        <h1 class="hero__title">INDEPENTED</h1>
+                        <picture><source srcset="img/header-1.webp" type="image/webp"><img src="img/header-1.jpg" alt="workstyle"></picture>
+                    </div>
+                    <div class="second_floor hero__wrap">
+                        <div class="content-left">
+                            <p class="light-title">Creativity</p>
+                            <div class="content-left__wrap">
+                                <p class="descrpt">Creativity is when you are given pieces of something trivial and dare to bind it with your "inner" glue. This is when the rules are the exception to your rules. This is when objectivity is tossed like dice in the hope of never seeing them fall. </p>
+                                <p class="descrpt">Creative thinking is not a professional activity, but a way to create and strengthen a connection with life. Creativity is not just about painting a picture, writing a novel, or building a house. The main thing is the full awareness of his presence.</p>
+                            </div>
+                        </div>
+                        <div class="content-right">
+                            <h1 class="hero__title">FRONT-END</h1>
+                            <picture><source srcset="img/header-2.webp" type="image/webp"><img src="img/header-2.jpg" alt="workstyle"></picture>
+                            <h1 class="hero__title">& UX/UI</h1>
+                        </div>
+                    </div>
+                    <div class="third_floor-wrap hero__wrap">
+                        <h1 class="hero__title">DEVELOPER</h1>
+                        <picture><source srcset="img/arrow-1.svg" type="image/webp"><img src="img/arrow-1.svg" alt="arrow"></picture>
                     </div>
                 </div>
-                <div class="hero-content__wrap content-right">
-                    <h1 class="hero__title">FRONT-END</h1>
-                    <picture><source srcset="img/header-2.webp" type="image/webp"><img src="img/header-2.jpg" alt="workstyle"></picture>
-                    <h1 class="hero__title">& UX/UI</h1>
+            </section>
+            <section id="about-me-photo">
+                <div class="container">
+                    <p class="section-id">01</p>
+                    <div class="about-me-photo__wrap">
+                        <img src="img/my_photo.jpg" class="my-photo" alt="my photo">
+                        <h2 class="strong-title">CREATIVE DEVELOPER</h2>
+                    </div> 
                 </div>
-            </div>
-            <div class="third_floor-wrap">
-                <h1 class="hero__title">DEVELOPER</h1>
-                <picture><source srcset="img/arrow-1.svg" type="image/webp"><img src="img/arrow-1.svg" alt="arrow"></picture>
-            </div>
-        </section>
-        <section id="about-me"></section>
-    </main>
+            </section>
+            <section id="about-me-info">
+                <div class="container">
+                    <p class="section-id">02</p>
+                    <div class="about-me-info__wrap">
+                        <h3 class="light-title">About me</h3>
+                        <div class="text__wrap">
+                            <p class="descrpt">My name is George and I am a Front-end developer & UX/UI Designer. At the moment I live in the capital of Ukraine, Kyiv.</p>
+                            <p class="descrpt">I studied and actively study programming for 3 years, of which I spent 2 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
+                        </div>
+                        <p class="descrpt">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends and find new stories for us.</p>
+                    </div> 
+                </div>
+            </section>
+        </main>
+    </div>
     
     <script src="js/main.min.js"></script>
+    <script src="js/lib/butter.js-master/src/butter.js"></script>
+    <script>
+        butter.init({
+            cancelOnTouch: false,
+            wrapperDamper: 0.08,
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 10, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+                } // End if
+            });
+        });
+    </script>
 </body>
 </html>
