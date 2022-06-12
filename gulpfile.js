@@ -18,7 +18,7 @@ let path = {
         CSS:    `${SOURCE_FOLDER}/scss/style.scss`,
         JS:     `${SOURCE_FOLDER}/js/main.js`,
         IMG:    `${SOURCE_FOLDER}/img/**/*.+(png|jpg|gif|ico|svg|webp)`,
-        FONTS:  `${SOURCE_FOLDER}/fonts/**/*.ttf`,
+        FONTS:  `${SOURCE_FOLDER}/fonts/**/*.woff`,
     },
     watch: {
         HTML:   `${SOURCE_FOLDER}/**/*.html`,
@@ -116,6 +116,32 @@ function img() {
         .pipe(browsersync.stream());
 }
 
+function fonts() {
+    return src(path.src.FONTS)
+        .pipe(dest(path.build.FONTS));
+}
+
+function fontsStyle(params) {
+    let file_content = fs.readFileSync(`${SOURCE_FOLDER}/scss/fonts.scss`);
+    if (file_content == '') {
+        fs.writeFile(`${SOURCE_FOLDER}/scss/fonts.scss`, '', cb);
+        return fs.readdir(path.build.FONTS, function (err, items) {
+            if (items) {
+                let c_fontname;
+                for (var i = 0; i < items.length; i++) {
+                    let fontname = items[i].split('.');
+                    fontname = fontname[0];
+                    if (c_fontname != fontname) {
+                        fs.appendFile(`${SOURCE_FOLDER}/scss/fonts.scss`, '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+                    }
+                    c_fontname = fontname;
+                }
+            }
+        })
+    }
+}
+function cb() { }
+
 function watchFiles() {
     gulp.watch([path.watch.HTML], html);
     gulp.watch([path.watch.CSS], css);
@@ -127,7 +153,7 @@ function clean() {
     return del(path.clean.DIST);
 }
 
-let build = gulp.series(clean, gulp.parallel(html, css), js, img)
+let build = gulp.series(clean, gulp.parallel(html, css), js, img, fonts, fontsStyle)
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // Export

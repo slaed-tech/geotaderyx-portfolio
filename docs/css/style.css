@@ -1,4 +1,18 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Helvetica";
+  font-display: swap;
+  src: url("../fonts/HelveticaLight.woff") format("woff"), url("../fonts/HelveticaLight.woff2") format("woff2");
+  font-weight: 300;
+  font-style: light;
+}
+@font-face {
+  font-family: "Helvetica";
+  font-display: swap;
+  src: url("../fonts/HelveticaRegular.woff") format("woff"), url("../fonts/HelveticaRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
 article,
 aside,
 details,
@@ -238,6 +252,8 @@ input[type=checkbox], input[type=radio] {
 *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -249,8 +265,10 @@ html {
 }
 
 body {
-  font-family: "", sans-serif;
-  color: #000;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 400;
+  color: #333;
+  background-color: #E4E4E4;
 }
 
 h1,
@@ -259,7 +277,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "", sans-serif;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 400;
 }
 
 .container {

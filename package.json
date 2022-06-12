@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Site-portfolio",
   "author": "Georgy Tadevosyan <geotaderyx.tdv@gmail.com>",
-  "keywords": [
-  ],
+  "keywords": [],
   "private": false,
   "devDependencies": {
     "browser-sync": "^2.27.10",
