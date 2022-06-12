@@ -43,10 +43,8 @@ const { src, dest }  = require("gulp"),
         include      = require("gulp-file-include"),
         uglify_js    = require("gulp-uglify-es").default,
         webp         = require("gulp-webp"),
-        webp_html    = require("gulp-webp-html"),
-        ttf2woff     = require("gulp-ttf2woff"),
-        ttf2woff2    = require("gulp-ttf2woff2"),
-        fonter       = require("gulp-fonter");
+        webp_html    = require("gulp-webp-html");
+
 
 // Functions
 function browserSync() {
@@ -118,47 +116,6 @@ function img() {
         .pipe(browsersync.stream());
 }
 
-gulp.task("otf2ttf", () => {
-    return src([`${SOURCE_FOLDER}/fonts/**/*.otf`])
-        .pipe(fonter({
-            formats: ["ttf"],
-        }))
-        .pipe(dest(`${SOURCE_FOLDER}/fonts/`));
-})
-
-function font() {
-    src(path.src.FONTS)
-        .pipe(ttf2woff())
-        .pipe(dest(path.build.FONTS));
-    return src(path.src.FONTS) 
-        .pipe(ttf2woff2())
-        .pipe(dest(path.build.FONTS));
-}
-
-function fontStyle() {
-    let file_content = fs.readFileSync(`${SOURCE_FOLDER}/scss/fonts.scss`);
-    if (file_content == '') {
-        fs.writeFile(`${SOURCE_FOLDER}/scss/fonts.scss`, '', cb);
-        return fs.readdir(path.build.FONTS, function (err, items) {
-            if (items) {
-                let c_fontname;
-                for (var i = 0; i < items.length; i++) {
-                    let fontname = items[i].split('.');
-                    fontname = fontname[0];
-                    if (c_fontname != fontname) {
-                        fs.appendFile(`${SOURCE_FOLDER}/scss/fonts.scss`, '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
-                    }
-                    c_fontname = fontname;
-                }
-            }
-        })
-    }
-}
-
-function cb() {
-
-}
-
 function watchFiles() {
     gulp.watch([path.watch.HTML], html);
     gulp.watch([path.watch.CSS], css);
@@ -170,7 +127,7 @@ function clean() {
     return del(path.clean.DIST);
 }
 
-let build = gulp.series(clean, gulp.parallel(html, css), js, img, font, fontStyle)
+let build = gulp.series(clean, gulp.parallel(html, css), js, img)
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // Export
