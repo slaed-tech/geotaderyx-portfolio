@@ -24,6 +24,8 @@
     "gulp-fonter": "^0.3.0",
     "gulp-imagemin": "^8.0.0",
     "gulp-sass": "^5.1.0",
-    "gulp-uglify-es": "^3.0.0"
+    "gulp-uglify-es": "^3.0.0",
+    "jquery": "^3.6.0",
+    "slick-carousel": "^1.8.1"
   }
 }

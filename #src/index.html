@@ -12,7 +12,7 @@
         <div class="container">
             <a href="/" class="logo-btn link"><span data-hover="geotaderyx">geotaderyx</span></a>
             <a href="#" class="change-theme-btn"></a>
-            <a href="#about-me_photo" class="contacts-btn link"><span data-hover="contacts">contacts</span></a>
+            <a href="#about-me-photo" class="contacts-btn link"><span data-hover="contacts">contacts</span></a>
         </div>
     </header>
     <div id="butter">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="third_floor-wrap hero__wrap">
                         <h1 class="hero__title">DEVELOPER</h1>
-                        <picture><source srcset="img/arrow-1.svg" type="image/webp"><img src="img/arrow-1.svg" alt="arrow"></picture>
+                        <picture><source srcset="img/arrow_big.svg" type="image/webp"><img src="img/arrow_big.svg" alt="arrow"></picture>
                     </div>
                 </div>
             </section>
@@ -55,53 +55,53 @@
             <section id="about-me-info">
                 <div class="container">
                     <p class="section-id">02</p>
-                    <div class="about-me-info__wrap">
-                        <h3 class="light-title">About me</h3>
-                        <div class="text__wrap">
-                            <p class="descrpt">My name is George and I am a Front-end developer & UX/UI Designer. At the moment I live in the capital of Ukraine, Kyiv.</p>
-                            <p class="descrpt">I studied and actively study programming for 3 years, of which I spent 2 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
-                        </div>
-                        <p class="descrpt">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends and find new stories for us.</p>
-                    </div> 
+                    <h3 class="light-title">About me</h3>
+                    <div class="text__wrap">
+                        <p class="descrpt">My name is George and I am a Front-end developer & UX/UI Designer. At the moment I live in the capital of Ukraine, Kyiv.</p>
+                        <p class="descrpt">I studied and actively study programming for 3 years, of which I spent 2 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
+                    </div>
+                    <p class="descrpt">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends and find new stories for us.</p>
+                </div>
+            </section>
+            <section id="featured-projects">
+                <div class="container">
+                    <h2 class="strong-title">Featured projects</h2>
+                    <div class="grid_layout">
+                        <p class="section-id">03</p>
+                        <h3 class="light-title">Name of the project</h3>
+                        <p class="descrpt">This should be a description of the project. Activities, Goal, Achievements.</p>
+                        <a class="btn-reset btn">
+                            <p class="title">See online version</p>
+                            <div class="btn-icon">
+                                <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                    <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                </svg>
+                                <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                    <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="slider_layout slider">
+                        <div class="rect"></div>
+                        <div class="rect"></div>
+                        <div class="rect"></div>
+                        <div class="rect"></div>
+                    </div>
                 </div>
             </section>
         </main>
     </div>
     
     <script src="js/main.min.js"></script>
-    <script src="js/lib/butter.js-master/src/butter.js"></script>
     <script>
-        butter.init({
-            cancelOnTouch: false,
-            wrapperDamper: 0.08,
-        });
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Add smooth scrolling to all links
-            $("a").on('click', function(event) {
+        $('a[href^="#"]').on("click", function (e) {
+            e.preventDefault();
 
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 10, function(){
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-                } // End if
-            });
-        });
+            const href = $(this).attr("href");
+            console.log(href);
+            $("html, body").animate({ scrollTop: $(href).offset().top }, 10);
+          });
     </script>
 </body>
 </html>

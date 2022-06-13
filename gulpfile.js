@@ -66,33 +66,42 @@ function html() {
 }
 
 function css() {
-    return src(path.src.CSS)
-        .pipe(
-            scss({
-                outputStyle: "expanded",
-            }).on('error', scss.logError)
-        )
-        .pipe(
-            autoprefixer({
-                overrideBrowserslist: ["last 5 versions"],
-                cascade: true,
-            })
-        )
-        .pipe(dest(path.build.CSS))
-        .pipe(clean_css())
-        .pipe(
-            rename({
-                extname: ".min.css",
-            })
-        )
-        .pipe(dest(path.build.CSS))
-        .pipe(browsersync.stream());
+    return src([
+        `node_modules/slick-carousel/slick/slick.scss`,
+        `node_modules/slick-carousel/slick/slick-theme.scss`,
+        path.src.CSS,
+    ])
+    .pipe(concat("style.css"))
+    .pipe(
+        scss({
+            outputStyle: "expanded",
+        }).on('error', scss.logError)
+    )
+    .pipe(
+        autoprefixer({
+            overrideBrowserslist: ["last 5 versions"],
+            cascade: true,
+        })
+    )
+    .pipe(dest(path.build.CSS))
+    .pipe(clean_css())
+    .pipe(
+        rename({
+            extname: ".min.css",
+        })
+    )
+    .pipe(dest(path.build.CSS))
+    .pipe(browsersync.stream());
 }
 
 function js() {
     return src([
+        `node_modules/jquery/dist/jquery.js`,
+        `node_modules/butter.js-master/src/butter.js`,
+        `node_modules/slick-carousel/slick/slick.js`,
         path.src.JS,
     ])
+    .pipe(concat("main.js"))
     .pipe(include())
     .pipe(dest(path.build.JS))
     .pipe(uglify_js())

@@ -24,7 +24,7 @@ $strong-title_fs: 100px;
 $h1-title_fs: 185px;
 
 $container_w: calc(100% - 60px);
-$col_w: 250px;
+$col_w: calc(100% / 6);
 // ANIMATIONS
 // TEMPLATES
 // MIXINS
@@ -62,6 +62,25 @@ $col_w: 250px;
 }
 
 //! MAIN STYLE
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: $body_color $bg_color;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: $bg_color;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $body_color;
+    border-radius: 10px;
+}
+
 *,
 *::after,
 *::before {
@@ -191,6 +210,57 @@ a.link {
     cursor: pointer;
 }
 
+.btn {
+    height: $body_fs;
+    display: flex;
+    align-items: center;
+    
+    .title {
+        display: block;
+        transition: all .4s ease;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $body_color;
+            margin-top: 6px;
+        }
+    }
+    .btn-icon {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+      
+        overflow: hidden;
+    }
+    .icon {
+        display: block;
+        position: absolute;
+        transition: transform 0.4s ease;
+    }  
+    .icon:nth-child(2) {
+        transform: translate(-40px);
+    }
+
+    &:hover .btn-container {
+        transform: translateY(calc(-1 * $body_fs));
+    }
+    &:hover .icon:first-child {
+        transform: translate(40px);
+    }
+      
+    &:hover .icon:nth-child(2) {
+        transform: translate(0px);
+    }
+}
+
+
 //* HEADER
 
 header {
@@ -218,7 +288,7 @@ header {
 
 //* HERO
 #hero {
-    padding-bottom: 80px;
+    padding-bottom: 110px;
 
     .hero__wrap {
         display: flex;
@@ -258,11 +328,12 @@ header {
 
 //* ABOUT ME
 #about-me-photo {
-    padding-bottom: 112px;
+    padding-bottom: 110px;
 
     .container {
-        display: flex;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: $col_w calc($col_w * 2) $col_w $col_w $col_w;
+        grid-row: auto;
     }
     .about-me-photo__wrap {
         display: flex;
@@ -272,50 +343,77 @@ header {
 }
 
 #about-me-info {
-    padding-bottom: 80px;
+    padding-bottom: 110px;
 
     .container {
-        display: flex;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: calc($col_w * 2) $col_w calc($col_w * 2) $col_w;
+        grid-row: auto;
     }
-    .section-id {
-        @include colmargins_a(2);
-    }
-    .about-me-info__wrap {
-        display: flex;
 
-        .light-title {
-            @include colmargins_a(1);
+    .text__wrap {
+        display: flex;
+        flex-direction: column;
+        
+        .descrpt {
+            max-width: 376px;
+
         }
-        .text__wrap {
-            display: flex;
-            flex-direction: column;
-            @include colmargins_b(1);
-            
-            .descrpt {
-                max-width: 376px;
+        .descrpt:nth-child(1)::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $body_color;
+            margin-top: 19px;
+        }
+        .descrpt:nth-child(1) {
+            margin-bottom: 20px;
+        }
+    }
+}
 
-            }
-            .descrpt:nth-child(1)::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 1px;
-                background-color: $body_color;
-                margin-top: 20px;
-            }
-            .descrpt:nth-child(1) {
-                margin-bottom: 20px;
-            }
+//* FEATURED PROJECTS
+#featured-projects {
+    padding-bottom: 110px;
+
+    .strong-title::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $body_color;
+        margin-top: 20px;
+    }
+    .grid_layout {
+        padding-top: 50px;
+        display: grid;
+        grid-template-columns: calc($col_w * 2) $col_w calc($col_w * 2) $col_w;
+        grid-row: auto;
+    }
+    .slider_layout {
+        .rect {
+            width: 400px;
+            height: 300px;
+            background-color: red;
         }
     }
 }
 
 //! MEDIA REQUESTS
-@media screen and (max-width: 1440px) {
-    h1 {
-        font-size: 40px;
-        color: red;
+
+@media screen and (min-width: 1920px) {
+    .container {
+        max-width: 1860px;
     }
+    h1 {
+        font-size: 208px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+
 
 }
