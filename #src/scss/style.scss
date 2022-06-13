@@ -69,7 +69,7 @@ $col_w: calc(100% / 6);
 }
 
 *::-webkit-scrollbar {
-    width: 6px;
+    width: 6ёpx;
 }
 
 *::-webkit-scrollbar-track {
@@ -393,11 +393,24 @@ header {
         grid-template-columns: calc($col_w * 2) $col_w calc($col_w * 2) $col_w;
         grid-row: auto;
     }
-    .slider_layout {
+    .splide {
+        margin-top: 120px;
+        cursor: grab;
+
+
         .rect {
-            width: 400px;
+            width: 200px;
             height: 300px;
-            background-color: red;
+        
+            &.r {
+                background-color: red;
+            }
+            &.g {
+                background-color: green;
+            }
+            &.b {
+                background-color: blue;
+            }
         }
     }
 }

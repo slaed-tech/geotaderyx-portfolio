@@ -67,8 +67,7 @@ function html() {
 
 function css() {
     return src([
-        `node_modules/slick-carousel/slick/slick.scss`,
-        `node_modules/slick-carousel/slick/slick-theme.scss`,
+        // `node_modules/@splidejs/splide/dist/css/splide.min.css`,
         path.src.CSS,
     ])
     .pipe(concat("style.css"))
@@ -98,7 +97,7 @@ function js() {
     return src([
         `node_modules/jquery/dist/jquery.js`,
         `node_modules/butter.js-master/src/butter.js`,
-        `node_modules/slick-carousel/slick/slick.js`,
+        // `node_modules/@splidejs/splide/dist/js/splide.min.js`,
         path.src.JS,
     ])
     .pipe(concat("main.js"))
