@@ -18,12 +18,13 @@
 $bg_color: #E4E4E4;
 $body_color: #070707;
 
-$body_fs: 28px;
+$body_fs: 24px;
 $light-title_fs: 18px;
 $strong-title_fs: 100px;
 $h1-title_fs: 185px;
 
-$col_w: 310px;
+$container_w: calc(100% - 60px);
+$col_w: 250px;
 // ANIMATIONS
 // TEMPLATES
 // MIXINS
@@ -38,10 +39,22 @@ $col_w: 310px;
 	}
 }
 
-@mixin colmargins($n) {
+@mixin colmargins_a($n) {
     &::after {
         content: "";
         width: 100%;
+        display: block;
+        
+        $temp: calc($col_w * $n);
+        margin-right: $temp;
+    }
+}
+
+@mixin colmargins_b($n) {
+    &::before {
+        content: "";
+        width: 100%;
+        display: block;
         
         $temp: calc($col_w * $n);
         margin-right: $temp;
@@ -110,7 +123,7 @@ main {
 }
 
 .container {
-    max-width: calc(100% - 60px);
+    max-width: $container_w;
     margin: 0 auto;
 }
 
@@ -158,7 +171,11 @@ a.link {
 .section-id {
     font-size: $light-title_fs;
 
-    @include colmargins(1);
+    @include colmargins_a(1);
+}
+
+.descrpt {
+    line-height: 120% !important;
 }
 
 .list-reset {
@@ -262,21 +279,32 @@ header {
         align-items: flex-start;
     }
     .section-id {
-        @include colmargins(2);
+        @include colmargins_a(2);
     }
     .about-me-info__wrap {
         display: flex;
 
         .light-title {
-            @include colmargins(1);
+            @include colmargins_a(1);
         }
         .text__wrap {
             display: flex;
             flex-direction: column;
-            max-width: 426px;
-            @include colmargins(1);
+            @include colmargins_b(1);
             
-            &:nth-child(1) {
+            .descrpt {
+                max-width: 376px;
+
+            }
+            .descrpt:nth-child(1)::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: $body_color;
+                margin-top: 20px;
+            }
+            .descrpt:nth-child(1) {
                 margin-bottom: 20px;
             }
         }
