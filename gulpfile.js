@@ -12,6 +12,7 @@ let path = {
         JS:     `${PROJECT_FOLDER}/js`,
         IMG:    `${PROJECT_FOLDER}/img`,
         FONTS:  `${PROJECT_FOLDER}/fonts`,
+        VIDEO:  `${PROJECT_FOLDER}/video`,
     },
     src: {
         HTML:   [`${SOURCE_FOLDER}/*.html`, `!${SOURCE_FOLDER}/_*.html`],
@@ -19,12 +20,14 @@ let path = {
         JS:     `${SOURCE_FOLDER}/js/**/*.js`,
         IMG:    `${SOURCE_FOLDER}/img/**/*.+(png|jpg|gif|ico|svg|webp)`,
         FONTS:  `${SOURCE_FOLDER}/fonts/**/*.woff`,
+        VIDEO:  `${SOURCE_FOLDER}/video/**/*.mp4`,
     },
     watch: {
         HTML:   `${SOURCE_FOLDER}/**/*.html`,
         CSS:    `${SOURCE_FOLDER}/scss/**/*.scss`,
         JS:     `${SOURCE_FOLDER}/js/**/*.js`,
         IMG:    `${SOURCE_FOLDER}/img/**/*.+(png|jpg|gif|ico|svg|webp)`,
+        VIDEO:  `${SOURCE_FOLDER}/video/**/*.mp4`,
     },
     clean: {
         DIST: `./${PROJECT_FOLDER}/`
@@ -60,7 +63,7 @@ function browserSync() {
 function html() {
     return src(path.src.HTML)
         .pipe(include())
-        .pipe(webp_html())
+        // .pipe(webp_html())
         .pipe(dest(path.build.HTML))
         .pipe(browsersync.stream());
 }
@@ -152,18 +155,24 @@ function fontsStyle(params) {
 }
 function cb() { }
 
+function video() {
+    return src(path.src.VIDEO)
+        .pipe(dest(path.build.VIDEO))
+}
+
 function watchFiles() {
     gulp.watch([path.watch.HTML], html);
     gulp.watch([path.watch.CSS], css);
     gulp.watch([path.watch.JS], js);
     gulp.watch([path.watch.IMG], img);
+    gulp.watch([path.watch.VIDEO], video);
 }
 
 function clean() {
     return del(path.clean.DIST);
 }
 
-let build = gulp.series(clean, gulp.parallel(html, css), js, img, fonts, fontsStyle)
+let build = gulp.series(clean, gulp.parallel(html, css), js, img, video, fonts, fontsStyle)
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // Export

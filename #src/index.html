@@ -12,8 +12,8 @@
     <header id="header">
         <div class="container">
             <a href="/" class="logo-btn link"><span data-hover="geotaderyx">geotaderyx</span></a>
-            <a href="#" class="change-theme-btn"></a>
-            <a href="#about-me-photo" class="contacts-btn link"><span data-hover="contacts">contacts</span></a>
+            <a href="javascript:changeTheme();" class="change-theme-btn"></a>
+            <a href="#contacts" class="contacts-btn link"><span data-hover="contacts">contacts</span></a>
         </div>
     </header>
     <div id="butter">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="third_floor-wrap hero__wrap">
                         <h1 class="hero__title">DEVELOPER</h1>
-                        <picture><source srcset="img/arrow_big.svg" type="image/webp"><img src="img/arrow_big.svg" alt="arrow"></picture>
+                        <picture><source srcset="img/arrow_big.svg" type="image/webp"><img src="img/arrow_big.svg" class="arrow" alt="arrow"></picture>
                     </div>
                 </div>
             </section>
@@ -59,7 +59,7 @@
                     <h3 class="light-title">About me</h3>
                     <div class="text__wrap">
                         <p class="descrpt">My name is George and I am a Front-end developer & UX/UI Designer. At the moment I live in the capital of Ukraine, Kyiv.</p>
-                        <p class="descrpt">I studied and actively study programming for 3 years, of which I spent 2 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
+                        <p class="descrpt">I studied and actively study programming for 2 years, of which I spent 1 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
                     </div>
                     <p class="descrpt">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends and find new stories for us.</p>
                 </div>
@@ -67,34 +67,252 @@
             <section id="featured-projects">
                 <div class="container">
                     <h2 class="strong-title">Featured projects</h2>
-                    <div class="grid_layout">
-                        <p class="section-id">03</p>
-                        <h3 class="light-title">Name of the project</h3>
-                        <p class="descrpt">This should be a description of the project. Activities, Goal, Achievements.</p>
-                        <a class="btn-reset btn">
-                            <p class="title">See online version</p>
-                            <div class="btn-icon">
-                                <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                                    <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
-                                </svg>
-                                <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                                    <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
-                                </svg>
-                            </div>
-                        </a>
+                    <div class="featured-projects__fp fp1">
+                        <div class="grid_layout">
+                            <p class="section-id">03</p>
+                            <h3 class="light-title">ARTICLE</h3>
+                            <p class="descrpt">ARTICLE - this is a separate created layout for the needs of publishing articles for an existing project of a construction company.</p>
+                            <a href="https://slaed-tech.github.io/article/" target="_blank" class="btn-reset btn">
+                                <p class="title">See online version</p>
+                                <div class="btn-icon">
+                                    <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                    </svg>
+                                    <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="splide" role="group">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide"><video width="100%" height="100%" autoplay loop muted src="video/article-main.mp4"></video></li>
+                                    <li style="background-image: url('img/ARTICLE/Screenshot_2.webp');" class="splide__slide"></li>
+                                    <li style="background-image: url('img/ARTICLE/Screenshot_3.webp');" class="splide__slide"></li>
+                                    <li style="background-image: url('img/ARTICLE/Screenshot_4.webp');" class="splide__slide"></li>
+                                    <li style="background-image: url('img/ARTICLE/Screenshot_5.webp');" class="splide__slide"></li>
+                                    <li style="background-image: url('img/ARTICLE/Screenshot_6.webp');" class="splide__slide"></li>
+                                </ul>
+                          </div>
+                        </div>
                     </div>
-                    <div class="splide" role="group">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide rect r"></li>
-                                <li class="splide__slide rect g"></li>
-                                <li class="splide__slide rect b"></li>
-                            </ul>
-                      </div>
+                    <div class="featured-projects__fp fp2">
+                        <div class="grid_layout">
+                            <p class="section-id">03</p>
+                            <h3 class="light-title">GOLDEN SAKURA</h3>
+                            <p class="descrpt">GOLDEN SAKURA - is a sushi restaurant located in Estonia. The task was to redesign and increase conversion. Customers were satisfied, and it became easier for their client to use the site.</p>
+                            <a href="https://goldensakura.ee/" target="_blank" class="btn-reset btn">
+                                <p class="title">See online version</p>
+                                <div class="btn-icon">
+                                    <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                    </svg>
+                                    <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="splide" role="group">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide"><video width="100%" height="100%" autoplay loop muted src="video/golden-main.mp4"></video></li>
+                                    <li style="background-image: url('img/GoldenSakura/photo_2022-05-24_23-53-44.webp');" class="splide__slide"></li>
+                                    <li style="background-image: url('img/GoldenSakura/Screenshot_2.webp');" class="splide__slide"></li>
+                                    <li style="background-image: url('img/GoldenSakura/Screenshot_8.webp');" class="splide__slide"></li>
+                                    <li style="background-image: url('img/GoldenSakura/Screenshot_4.webp');" class="splide__slide"></li>
+                                </ul>
+                          </div>
+                        </div>
                     </div>
-                    
                 </div>
             </section>
+            <section id="projects">
+                <div class="container">
+                    <div class="projects-capture__wrap">
+                        <p class="section-id">06</p>
+                        <h3 class="light-title">Projects</h3>
+                    </div>
+                    <ul class="accordion list-reset">
+                        <li class="accordion__li p2">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">Name of the project</p>
+                            <div class="li__content">
+                                <img src="img/Golden Sakura/Screenshot_1.png" alt="project's image" class="cover">
+                                <div class="grid_layout">
+                                    <p class="light-title">Name of project</p>
+                                    <p class="descrpt">This should be a description of the project. Activities, Goal, Achievements.</p>
+                                    <a class="btn-reset btn">
+                                        <p class="title">See online version</p>
+                                        <div class="btn-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion__li p1">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">BEAUTY STYLE</p>
+                            <div class="li__content">
+                                <img src="img/BS/Screenshot_8.png" alt="project's image" class="cover">
+                                <div class="grid_layout">
+                                    <p class="light-title">BEAUTY STYLE</p>
+                                    <p href="https://beauty-style.unixstorm.org/" class="descrpt">BEAUTY STYLE - is a sewing business providing various embroidery services. The task was to layout the finished layout. There were some problems, but at the end the customer was satisfied.</p>
+                                    <a class="btn-reset btn">
+                                        <p class="title">See online version</p>
+                                        <div class="btn-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion__li p3">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">Name of the project</p>
+                            <div class="li__content">
+                                <img src="img/Golden Sakura/Screenshot_1.png" alt="project's image" class="cover">
+                                <div class="grid_layout">
+                                    <p class="light-title">Name of project</p>
+                                    <p class="descrpt">This should be a description of the project. Activities, Goal, Achievements.</p>
+                                    <a class="btn-reset btn">
+                                        <p class="title">See online version</p>
+                                        <div class="btn-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion__li p4">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">Name of the project</p>
+                            <div class="li__content">
+                                <img src="img/Golden Sakura/Screenshot_1.png" alt="project's image" class="cover">
+                                <div class="grid_layout">
+                                    <p class="light-title">Name of project</p>
+                                    <p class="descrpt">This should be a description of the project. Activities, Goal, Achievements.</p>
+                                    <a class="btn-reset btn">
+                                        <p class="title">See online version</p>
+                                        <div class="btn-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>  
+                </div>
+            </section>
+            <section id="services">
+                <div class="container">
+                    <div class="service-capture__wrap">
+                        <p class="section-id">07</p>
+                        <h3 class="light-title">Services</h3>
+                    </div>
+                    <ul class="accordion list-reset">
+                        <li class="accordion__li s1">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">Front-End Develop</p>
+                            <div class="li__content">
+                                <img src="img/photo-1.jpg" alt="service's image" class="">
+                                <div class="text__wrap">
+                                    <div class="__wrap">
+                                        <p class="descrpt">I provide Front-End services. The whole development process depends on the level of complexity, but in general, 5 stages can be distinguished.</p>
+                                        <ol class="project-steps list-reset">
+                                            <li class="step s1">1. Project discussion.</li>
+                                            <li class="step s1">2. Creating & Testing Prototype</li>
+                                            <li class="step s1">3. Define technologies.</li>
+                                            <li class="step s1">4. Development.</li>
+                                            <li class="step s1">5. QA & Testing.</li>
+                                        </ol>
+                                    </div>
+                                    <a href="#contacts" class="btn-reset btn">
+                                        <p class="title">Contact me</p>
+                                        <div class="btn-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion__li s1">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">UX/UI Desing</p>
+                            <div class="li__content">
+                                <img src="img/photo.jpg" alt="service's image" class="">
+                                <div class="text__wrap">
+                                    <div class="__wrap">
+                                        <p class="descrpt">I provide UX/UI services. The whole development process depends on the task and goal, but in general, 6 stages can be distinguished.</p>
+                                        <ol class="project-steps list-reset">
+                                            <li class="step s1">1. Project discussion.</li>
+                                            <li class="step s1">2. Define the information architecture.</li>
+                                            <li class="step s1">3. Creating & testing wireframe.</li>
+                                            <li class="step s1">4. Define UI elements.</li>
+                                            <li class="step s1">5. Package UI elements.</li>
+                                            <li class="step s1">6. Usability testing.</li>
+                                        </ol>
+                                    </div>
+                                    <a href="#contacts" class="btn-reset btn">
+                                        <p class="title">Contact me</p>
+                                        <div class="btn-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>  
+                </div>
+            </section>
+            <footer id="contacts">
+                <div class="container">
+                    <div class="contacts__title">
+                        <p class="section-id">08</p>
+                        <p class="descpt">Want to work<br>together?</p>
+                        <p class="descpt">Send me a <br>message!</p>
+                    </div>
+                    <div class="contacts__content">
+                        <a href="mailto:geotaderyx.tdv@gmail.com" class="mail">GEOTADERYX.TDV<br>@GMAIL.COM</a>
+                        <img src="img/arrow-big-right.svg" class="arrow" alt="arrow">
+                    </div>
+                    <div class="contacts_social">
+                        <p class="descpt name">Grigory<br>Tadevosyan</p>
+                        <div class="social">
+                            <a href="#" class="social__link">Twitter</a>
+                            <a href="#" class="social__link">Instagram</a>
+                            <a href="#" class="social__link">LinkedIn</a>
+                        </div>
+                        <p class="descpt capt">CREATIVE DEVELOPER</p>
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
     
