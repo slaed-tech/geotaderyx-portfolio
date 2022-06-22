@@ -676,6 +676,9 @@ header .change-theme-btn {
   background-size: cover;
   background-position: center;
 }
+#featured-projects .fp3 .splide__list li:nth-child(3) {
+  background-position: left;
+}
 
 #projects {
   padding-bottom: 110px;
@@ -703,6 +706,7 @@ header .change-theme-btn {
 .accordion .accordion__li .strong-title {
   line-height: normal;
   cursor: pointer;
+  text-transform: uppercase;
 }
 .accordion .accordion__li .strong-title::after {
   content: "";
@@ -721,8 +725,7 @@ header .change-theme-btn {
 }
 .accordion .accordion__li .li__content .cover {
   margin-bottom: 50px;
-  height: 800px;
-  width: 100%;
+  height: auto;
 }
 .accordion .accordion__li .li__content .grid_layout {
   display: grid;
@@ -732,10 +735,16 @@ header .change-theme-btn {
       -ms-flex-pack: end;
           justify-content: end;
 }
+.accordion .accordion__li .li__content .grid_layout .light-title {
+  text-transform: uppercase;
+}
 .accordion .accordion__li .li__content.active {
   height: 1115px;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 80px;
+}
+.accordion .p1 .descrpt {
+  max-width: 450px;
 }
 
 #services {

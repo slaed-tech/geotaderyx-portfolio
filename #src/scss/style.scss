@@ -455,6 +455,9 @@ header {
             }
         }
     }
+    .fp3 .splide__list li:nth-child(3) {
+        background-position: left;
+    }
 }
 
 //* PROJECTS
@@ -480,6 +483,7 @@ header {
         .strong-title {
             line-height: normal;
             cursor: pointer;
+            text-transform: uppercase;
         }
         .strong-title::after {
             content: "";
@@ -497,21 +501,27 @@ header {
             
             .cover {
                 margin-bottom: 50px;
-                height: 800px;
-                width: 100%;
+                height: auto;
             }
             .grid_layout {
                 display: grid;
                 grid-template-columns: $col_w calc($col_w * 2) $col_w;
                 grid-template-rows: auto;
                 justify-content: end;
+            
+                .light-title {
+                    text-transform: uppercase;
+                }
             }
         }
         .li__content.active {
             height: 1115px;
-            margin-top: 80px;
+            margin-top: 50px;
             margin-bottom: 80px;
         }
+    }
+    .p1 .descrpt {
+        max-width: 450px;
     }
 }
 
