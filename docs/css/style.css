@@ -253,11 +253,11 @@ input[type=checkbox], input[type=radio] {
 }
 
 *::-webkit-scrollbar {
-  width: 6ёpx;
+  width: 6px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #E4E4E4;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -300,6 +300,65 @@ body {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+  mix-blend-mode: normal;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  z-index: 99999999;
+  width: 0;
+  height: 0;
+  background-color: #070707;
+  border: solid;
+  border-radius: 50%;
+  border-width: 0px;
+  border-color: #000;
+}
+
+.cursor-dot-outline {
+  z-index: 99999998;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border: solid;
+  border-radius: 50%;
+  border-width: 0px;
+  border-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.cursor-dot-outline .dot__title {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 24px;
 }
 
 a {
@@ -350,7 +409,6 @@ main {
 a.link {
   *zoom: 1;
   text-decoration: none;
-  cursor: pointer;
   text-transform: uppercase;
   font-size: 18px;
   overflow: hidden;
@@ -421,7 +479,6 @@ a.link:hover span {
   padding: 0;
   border: none;
   background-color: transparent;
-  cursor: pointer;
   text-decoration: none;
 }
 .btn-reset .title {
@@ -705,8 +762,11 @@ header .change-theme-btn {
 }
 .accordion .accordion__li .strong-title {
   line-height: normal;
-  cursor: pointer;
   text-transform: uppercase;
+}
+.accordion .accordion__li .strong-title.lock {
+  opacity: 30%;
+  cursor: default;
 }
 .accordion .accordion__li .strong-title::after {
   content: "";
@@ -725,7 +785,11 @@ header .change-theme-btn {
 }
 .accordion .accordion__li .li__content .cover {
   margin-bottom: 50px;
-  height: auto;
+  height: 900px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .accordion .accordion__li .li__content .grid_layout {
   display: grid;
@@ -742,6 +806,9 @@ header .change-theme-btn {
   height: 1115px;
   margin-top: 50px;
   margin-bottom: 80px;
+}
+.accordion .p2 .descrpt {
+  max-width: 450px;
 }
 .accordion .p1 .descrpt {
   max-width: 450px;
@@ -767,11 +834,14 @@ header .change-theme-btn {
   height: 540px;
   margin: 100px 0;
 }
-#services .li__content img {
+#services .li__content .cover {
   height: 100%;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #services .li__content .text__wrap {
   display: -webkit-box;
@@ -834,7 +904,7 @@ header .change-theme-btn {
   margin-bottom: 80px;
 }
 #contacts .contacts__content .mail {
-  font-size: 130px;
+  font-size: 120px;
   text-decoration: underline;
   line-height: 150px;
 }
@@ -850,7 +920,7 @@ header .change-theme-btn {
           align-items: flex-end;
 }
 #contacts .contacts_social .capt {
-  font-size: 130px;
+  font-size: 120px;
   line-height: 130px;
   text-align: right;
 }
@@ -872,5 +942,11 @@ header .change-theme-btn {
 @media screen and (min-width: 1550px) {
   .h1 {
     font-size: 175px;
+  }
+  #contacts .contacts__content .mail {
+    font-size: 50px;
+  }
+  #contacts .contacts_social .capt {
+    font-size: 100px;
   }
 }

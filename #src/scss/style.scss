@@ -69,11 +69,11 @@ $col_w: calc(100% / 6);
 }
 
 *::-webkit-scrollbar {
-    width: 6ёpx;
+    width: 6px;
 }
 
 *::-webkit-scrollbar-track {
-    background: $bg_color;
+    background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -111,6 +111,57 @@ body {
     transition: all .5s ease;
 }
 
+.cursor-dot,
+.cursor-dot-outline {
+  mix-blend-mode: normal;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  z-index:99999999;
+  width: 0;
+  height: 0;
+  background-color: $body_color;
+  border: solid;
+  border-radius: 50%;
+  border-width: 0px;
+  border-color: #000;
+}
+
+.cursor-dot-outline {
+  z-index:99999998;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border: solid;
+  border-radius: 50%;
+  border-width: 0px;
+  border-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity .5s ease;
+  transition: transform .5s ease;
+
+  .dot__title {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+}
+
+// .custom-cursor {
+//     cursor: none !important;
+// }
+
 a {
     color: $body_color;
     text-decoration: none;
@@ -123,7 +174,7 @@ a {
 //     *::after {
 //         background-color: #fff !important;
 //     }
-//     * svg {
+//     * svg path {
 //         fill: #fff !important;
 //     }
 //     * a {
@@ -174,7 +225,7 @@ main {
 a.link {
     @include clearfix;
     text-decoration: none;
-    cursor: pointer;
+    // cursor: pointer;
     text-transform: uppercase;
     font-size: 18px;
     overflow: hidden;
@@ -232,7 +283,7 @@ a.link {
     padding: 0;
     border: none;
     background-color: transparent;
-    cursor: pointer;
+    // cursor: pointer;
     text-decoration: none;
 
     .title {
@@ -482,8 +533,13 @@ header {
 
         .strong-title {
             line-height: normal;
-            cursor: pointer;
+            // cursor: pointer;
             text-transform: uppercase;
+        
+            &.lock {
+                opacity: 30%;
+                cursor: default;
+            }
         }
         .strong-title::after {
             content: "";
@@ -501,7 +557,11 @@ header {
             
             .cover {
                 margin-bottom: 50px;
-                height: auto;
+                height: 900px;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
             .grid_layout {
                 display: grid;
@@ -519,6 +579,9 @@ header {
             margin-top: 50px;
             margin-bottom: 80px;
         }
+    }
+    .p2 .descrpt {
+        max-width: 450px;
     }
     .p1 .descrpt {
         max-width: 450px;
@@ -545,9 +608,12 @@ header {
             height: 540px;
             margin: 100px 0;
         }
-        img {
+        .cover {
             height: 100%;
             transition: all .5s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .text__wrap {
@@ -601,7 +667,7 @@ header {
         margin-bottom: 80px;
     
         .mail {
-            font-size: 130px;
+            font-size: 120px;
             text-decoration: underline;
             line-height: 150px;
         }
@@ -614,7 +680,7 @@ header {
         align-items: flex-end;
 
         .capt {
-            font-size: 130px;
+            font-size: 120px;
             line-height: 130px;
             text-align: right;
         }
@@ -641,9 +707,14 @@ header {
 
 @media screen and (min-width: 1550px) {
     .container {
-        
     }
     .h1 {
         font-size: 175px;
+    }
+    #contacts .contacts__content .mail {
+        font-size: 50px;
+    }
+    #contacts .contacts_social .capt {
+        font-size: 100px;
     }
 }
