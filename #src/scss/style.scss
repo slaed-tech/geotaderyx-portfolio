@@ -283,7 +283,7 @@ a.link {
     padding: 0;
     border: none;
     background-color: transparent;
-    // cursor: pointer;
+    cursor: pointer;
     text-decoration: none;
 
     .title {
@@ -533,7 +533,7 @@ header {
 
         .strong-title {
             line-height: normal;
-            // cursor: pointer;
+            cursor: pointer;
             text-transform: uppercase;
         
             &.lock {
