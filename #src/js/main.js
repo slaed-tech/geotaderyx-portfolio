@@ -86,11 +86,11 @@ function cursorInit() {
             
             document.addEventListener('mousedown', function() {
                 self.cursorEnlarged = true;
-                self.toggleCursorSize();
+                // self.toggleCursorSize();
             });
             document.addEventListener('mouseup', function() {
                 self.cursorEnlarged = false;
-                self.toggleCursorSize();
+                // self.toggleCursorSize();
             })
     
             document.addEventListener('mousemove', function(e) {
@@ -154,18 +154,16 @@ function cursorInit() {
     cursor.init();
 }
 
-// function copyText(e) {
+function copyText(e) {
 
-//     let text = e.innerHTML;
-//     let re = /<br>/gi;
-//     text.replace(re, "fds");
-//     console.log(text);
-//     navigator.clipboard.writeText(text)
-//         .then(() => {
-//             e.classList.add('active-copy')
-//             setTimeout(() => e.classList.remove('active-copy'), 500)
-//         })
-//         .catch(err => {
-//             console.log('error: ', err)
-//         })
-// }
+    let dot__title = document.querySelector(".dot__title");
+    let text = "geotaderyx.tdv@gmail.com";
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            dot__title.innerHTML = "Done!";
+            setTimeout(() => dot__title.innerHTML = "Copy", 2000)
+        })
+        .catch(err => {
+            console.log('error: ', err)
+        })
+}

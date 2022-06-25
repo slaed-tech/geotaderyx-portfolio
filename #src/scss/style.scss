@@ -62,7 +62,6 @@ $col_w: calc(100% / 6);
 }
 
 //! MAIN STYLE
-
 * {
     scrollbar-width: auto;
     scrollbar-color: $body_color $bg_color;
@@ -148,8 +147,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: opacity .5s ease;
   transition: transform .5s ease;
+  transition: opacity .5s ease;
 
   .dot__title {
     text-align: center;
@@ -157,10 +156,6 @@ body {
     font-size: 24px;
   }
 }
-
-// .custom-cursor {
-//     cursor: none !important;
-// }
 
 a {
     color: $body_color;
@@ -222,7 +217,7 @@ main {
     margin: 0 auto;
 }
 
-a.link {
+a.link-1 {
     @include clearfix;
     text-decoration: none;
     // cursor: pointer;
@@ -253,6 +248,45 @@ a.link {
         }
     }
 }
+
+.underline-hover {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    height: 100%;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 100%;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $body_color;
+        transition: all .6s ease-in-out;
+        margin-right: 50px;
+    }
+    
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $body_color;
+        transition: all .6s ease-in-out;
+    }
+    &:hover::after {
+        transform: translate(calc(100% + 50px)) !important;
+    }
+    &:hover::before {
+        transform: translate(calc(100% + 50px)) !important;
+    }
+}
+
 
 .light-title {
     font-size: $light-title_fs;
@@ -668,8 +702,9 @@ header {
     
         .mail {
             font-size: 120px;
-            text-decoration: underline;
             line-height: 150px;
+            text-decoration: underline;
+            transition: all .5s ease;
         }
     }
     .contacts_social {
@@ -684,8 +719,8 @@ header {
             line-height: 130px;
             text-align: right;
         }
-        .social .social__link:hover {
-            text-decoration: underline;
+        .social .social__link {
+            line-height: 30px;
         }
         .social .social__link:not(:last-child) {
             margin-right: 50px;
@@ -710,11 +745,5 @@ header {
     }
     .h1 {
         font-size: 175px;
-    }
-    #contacts .contacts__content .mail {
-        font-size: 50px;
-    }
-    #contacts .contacts_social .capt {
-        font-size: 100px;
     }
 }

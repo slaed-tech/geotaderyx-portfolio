@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
     <title>GEOTADERYX PORTFOLIO</title>
 </head>
 <body>
@@ -16,9 +16,9 @@
     <div class="cursor-dot"></div>
     <header id="header">
         <div class="container">
-            <a href="/" class="logo-btn link"><span data-hover="geotaderyx">geotaderyx</span></a>
+            <a href="/" class="logo-btn link-1"><span data-hover="geotaderyx">geotaderyx</span></a>
             <a href="javascript:changeTheme();" class="change-theme-btn"></a>
-            <a href="#contacts" class="contacts-btn link"><span data-hover="contacts">contacts</span></a>
+            <a href="#contacts" class="contacts-btn link-1"><span data-hover="contacts">contacts</span></a>
         </div>
     </header>
     <div id="butter">
@@ -270,7 +270,7 @@
                     <ul class="accordion list-reset">
                         <li class="accordion__li s1">
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt">Front-End Develop</p>
-                            <div class="li__content">
+                            <div class="li__content active">
                                 <div style="background-image: url('img/front-end-dev.jpg');" class="cover"></div>
                                 <div class="text__wrap">
                                     <div class="__wrap">
@@ -338,7 +338,10 @@
                         <p class="descpt">Send me a <br>message!</p>
                     </div>
                     <div class="contacts__content">
-                        <a onclick="javascript:copyText(this);" href="mailto:geotaderyx.tdv@gmail.com" class="custom-cursor mail">GEOTADERYX.TDV<br>@GMAIL.COM</a>
+                        <div class="mail__wrap">
+                        <a onclick="javascript:copyText(this);" href="mailto:geotaderyx.tdv@gmail.com" class="custom-cursor mail">GEOTADERYX.TDV</a>
+                        <a onclick="javascript:copyText(this);" href="mailto:geotaderyx.tdv@gmail.com" class="custom-cursor mail">@GMAIL.COM</a>
+                        </div>
                         <svg class="arrow" width="343" height="271" viewBox="0 0 343 271" xmlns="http://www.w3.org/2000/svg">
                             <path d="M206.667 1.83373L340.792 130.682C341.491 131.333 342.046 132.111 342.425 132.972C342.805 133.833 343 134.758 343 135.693C343 136.627 342.805 137.553 342.425 138.413C342.046 139.274 341.491 140.053 340.792 140.703L206.667 269.552C205.232 270.586 203.457 271.088 201.668 270.965C199.879 270.843 198.196 270.105 196.927 268.887C195.659 267.668 194.891 266.051 194.764 264.333C194.637 262.614 195.159 260.909 196.235 259.53L317.507 142.851L7.71505 142.851C5.73882 142.851 3.84354 142.097 2.44613 140.754C1.04872 139.412 0.263666 137.591 0.263666 135.693C0.263666 133.794 1.04872 131.974 2.44613 130.631C3.84353 129.289 5.73882 128.534 7.71505 128.534L317.507 128.534L196.235 11.8552C195.159 10.4768 194.636 8.77163 194.764 7.05285C194.891 5.3341 195.659 3.71709 196.927 2.49868C198.196 1.28026 199.879 0.542228 201.668 0.420096C203.457 0.297934 205.232 0.799857 206.667 1.83373Z" fill="#070707"/>
                         </svg>
@@ -346,9 +349,9 @@
                     <div class="contacts_social">
                         <p class="descpt name">Grigory<br>Tadevosyan</p>
                         <div class="social">
-                            <a href="#" class="social__link">Twitter</a>
-                            <a href="#" class="social__link">Instagram</a>
-                            <a href="#" class="social__link">LinkedIn</a>
+                            <a href="https://twitter.com/geotaderyx" class="underline-hover social__link">Twitter</a>
+                            <a href="https://github.com/slaed-tech" class="underline-hover social__link">GitHub</a>
+                            <a href="https://www.linkedin.com/in/georgy-tadevosyan-00515520a/" target="_blank" class="underline-hover social__link">LinkedIn</a>
                         </div>
                         <p class="descpt capt">CREATIVE DEVELOPER</p>
                     </div>

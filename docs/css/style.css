@@ -346,14 +346,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: opacity 0.5s ease;
-  -o-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   -o-transition: transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 .cursor-dot-outline .dot__title {
   text-align: center;
@@ -406,7 +406,7 @@ main {
   margin: 0 auto;
 }
 
-a.link {
+a.link-1 {
   *zoom: 1;
   text-decoration: none;
   text-transform: uppercase;
@@ -417,21 +417,21 @@ a.link {
   color: #E4E4E4;
   font-weight: 400;
 }
-a.link:before, a.link:after {
+a.link-1:before, a.link-1:after {
   content: "";
   display: table;
 }
-a.link:after {
+a.link-1:after {
   clear: both;
 }
-a.link span {
+a.link-1 span {
   position: relative;
   display: inline-block;
   -webkit-transition-duration: 0.3s;
        -o-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
-a.link span::before {
+a.link-1 span::before {
   color: #E4E4E4;
   position: absolute;
   top: 100%;
@@ -440,10 +440,54 @@ a.link span::before {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
-a.link:hover span {
+a.link-1:hover span {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
+}
+
+.underline-hover {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 100%;
+}
+.underline-hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #070707;
+  -webkit-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  margin-right: 50px;
+}
+.underline-hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #070707;
+  -webkit-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+.underline-hover:hover::after {
+  -webkit-transform: translate(calc(100% + 50px)) !important;
+      -ms-transform: translate(calc(100% + 50px)) !important;
+          transform: translate(calc(100% + 50px)) !important;
+}
+.underline-hover:hover::before {
+  -webkit-transform: translate(calc(100% + 50px)) !important;
+      -ms-transform: translate(calc(100% + 50px)) !important;
+          transform: translate(calc(100% + 50px)) !important;
 }
 
 .light-title {
@@ -907,8 +951,11 @@ header .change-theme-btn {
 }
 #contacts .contacts__content .mail {
   font-size: 120px;
-  text-decoration: underline;
   line-height: 150px;
+  text-decoration: underline;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 #contacts .contacts_social {
   display: grid;
@@ -926,8 +973,8 @@ header .change-theme-btn {
   line-height: 130px;
   text-align: right;
 }
-#contacts .contacts_social .social .social__link:hover {
-  text-decoration: underline;
+#contacts .contacts_social .social .social__link {
+  line-height: 30px;
 }
 #contacts .contacts_social .social .social__link:not(:last-child) {
   margin-right: 50px;
@@ -944,11 +991,5 @@ header .change-theme-btn {
 @media screen and (min-width: 1550px) {
   .h1 {
     font-size: 175px;
-  }
-  #contacts .contacts__content .mail {
-    font-size: 50px;
-  }
-  #contacts .contacts_social .capt {
-    font-size: 100px;
   }
 }
