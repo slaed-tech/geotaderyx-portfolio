@@ -54,32 +54,36 @@
             </section>
             <section id="about-me-photo">
                 <div class="container">
-                    <p class="section-id">01</p>
-                    <div class="about-me-photo__wrap">
-                        <img src="img/me-wb.jpg" class="my-photo" alt="my photo">
-                        <h2 class="strong-title">CREATIVE DEVELOPER</h2>
-                    </div> 
+                    <div class="grid__layout">
+                        <p class="section-id col-1">01</p>
+                        <div class="about-me-photo__wrap col-2 ">
+                            <img src="img/me-wb.jpg" class="my-photo" alt="my photo">
+                            <h2 class="strong-title">CREATIVE DEVELOPER</h2>
+                        </div> 
+                    </div>
                 </div>
             </section>
             <section id="about-me-info">
                 <div class="container">
-                    <p class="section-id">02</p>
-                    <h3 class="light-title">About me</h3>
-                    <div class="text__wrap">
-                        <p class="descrpt">My name is George and I am a Front-end developer & UX/UI Designer. At the moment I live in the capital of Ukraine, Kyiv.</p>
-                        <p class="descrpt">I studied and actively study programming for 2 years, of which I spent 1 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
+                    <div class="grid__layout">
+                        <p class="section-id col-1">02</p>
+                        <h3 class="light-title start-col-3 end-col-3">About me</h3>
+                        <div class="text__wrap col-2">
+                            <p class="descrpt">My name is George and I am a Front-end developer & UX/UI Designer. At the moment I live in the capital of Ukraine, Kyiv.</p>
+                            <p class="descrpt">I studied and actively study programming for 2 years, of which I spent 1 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
+                        </div>
+                        <p class="descrpt start-col-6 end-col-6">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends and find new stories for us.</p>
                     </div>
-                    <p class="descrpt">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends and find new stories for us.</p>
                 </div>
             </section>
             <section id="featured-projects">
                 <div class="container">
                     <h2 class="strong-title">Featured projects</h2>
                     <div class="featured-projects__fp fp1">
-                        <div class="grid_layout">
-                            <p class="section-id">03</p>
-                            <h3 class="light-title">ARTICLE</h3>
-                            <p class="descrpt">ARTICLE - this is a separate created layout for the needs of publishing articles for an existing project of a construction company.</p>
+                        <div class="grid__layout">
+                            <p class="section-id col-2">03</p>
+                            <h3 class="light-title col-1">ARTICLE</h3>
+                            <p class="descrpt col-2">ARTICLE - this is a separate created layout for the needs of publishing articles for an existing project of a construction company.</p>
                             <a href="https://slaed-tech.github.io/article/" target="_blank" class="btn-reset btn">
                                 <p class="title">See online version</p>
                                 <div class="btn-icon">
@@ -106,10 +110,10 @@
                         </div>
                     </div>
                     <div class="featured-projects__fp fp2">
-                        <div class="grid_layout">
-                            <p class="section-id">03</p>
-                            <h3 class="light-title">GOLDEN SAKURA</h3>
-                            <p class="descrpt">GOLDEN SAKURA - is a sushi restaurant located in Estonia. The task was to redesign and increase conversion. Customers were satisfied, and it became easier for their client to use the site.</p>
+                        <div class="grid__layout">
+                            <p class="section-id col-2">03</p>
+                            <h3 class="light-title col-1">GOLDEN SAKURA</h3>
+                            <p class="descrpt col-2">GOLDEN SAKURA - is a sushi restaurant located in Estonia. The task was to redesign and increase conversion. Customers were satisfied, and it became easier for their client to use the site.</p>
                             <a href="https://goldensakura.ee/" target="_blank" class="btn-reset btn">
                                 <p class="title">See online version</p>
                                 <div class="btn-icon">
@@ -135,10 +139,10 @@
                         </div>
                     </div>
                     <div class="featured-projects__fp fp3">
-                        <div class="grid_layout">
-                            <p class="section-id">03</p>
-                            <h3 class="light-title">W STUDIO</h3>
-                            <p class="descrpt">W STUDIO - is an elite interior design studio in Kyiv. The task was to layout the layout on the Tilda constructor.</p>
+                        <div class="grid__layout">
+                            <p class="section-id col-2">03</p>
+                            <h3 class="light-title col-1">W STUDIO</h3>
+                            <p class="descrpt col-2">W STUDIO - is an elite interior design studio in Kyiv. The task was to layout the layout on the Tilda constructor.</p>
                             <a href="https://w-studio-design.com/" target="_blank" class="btn-reset btn">
                                 <p class="title">See online version</p>
                                 <div class="btn-icon">
@@ -170,18 +174,18 @@
             </section>
             <section id="projects">
                 <div class="container">
-                    <div class="projects-capture__wrap">
-                        <p class="section-id">06</p>
-                        <h3 class="light-title">Projects</h3>
+                    <div class="grid__layout">
+                        <p class="section-id col-2">06</p>
+                        <h3 class="light-title col-1">Projects</h3>
                     </div>
                     <ul class="accordion list-reset">
                         <li class="accordion__li p1">
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt">PORTFOLIO</p>
                             <div class="li__content">
                                 <div style="background-image: url('img/Portfolio/Screenshot_1.png');" class="cover"></div>
-                                <div class="grid_layout">
-                                    <p class="light-title">Portflolio</p>
-                                    <p class="descrpt">This is my own portfolio site. Created from scratch alone to showcase my portfolio and assert my competence</p>
+                                <div class="grid__layout">
+                                    <p class="light-title start-col-3">Portflolio</p>
+                                    <p class="descrpt col-2">This is my own portfolio site. Created from scratch alone to showcase my portfolio and assert my competence</p>
                                     <a class="btn-reset btn lock">
                                         <p class="title">See online version</p>
                                         <div class="btn-icon">
@@ -200,9 +204,9 @@
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt">BEAUTY STYLE</p>
                             <div class="li__content">
                                 <div style="background-image: url('img/BS/Screenshot_1.png');" class="cover"></div>
-                                <div class="grid_layout">
-                                    <p class="light-title">BEAUTY STYLE</p>
-                                    <p class="descrpt">BEAUTY STYLE - is a sewing business providing various embroidery services. The task was to layout the finished layout. There were some problems, but at the end the customer was satisfied.</p>
+                                <div class="grid__layout">
+                                    <p class="light-title start-col-3">BEAUTY STYLE</p>
+                                    <p class="descrpt col-2">BEAUTY STYLE - is a sewing business providing various embroidery services. The task was to layout the finished layout. There were some problems, but at the end the customer was satisfied.</p>
                                     <a href="https://beauty-style.unixstorm.org/" class="btn-reset btn">
                                         <p class="title">See online version</p>
                                         <div class="btn-icon">
@@ -221,9 +225,9 @@
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt lock">coming soon</p>
                             <div class="li__content">
                                 <div class="cover"></div>
-                                <div class="grid_layout">
-                                    <p class="light-title">Name of the project</p>
-                                    <p class="descrpt">This should be a description of the project. Activities, Goal, Achievements.</p>
+                                <div class="grid__layout">
+                                    <p class="light-title start-col-3">Name of the project</p>
+                                    <p class="descrpt col-2">This should be a description of the project. Activities, Goal, Achievements.</p>
                                     <a class="btn-reset btn">
                                         <p class="title">See online version</p>
                                         <div class="btn-icon">
@@ -242,9 +246,9 @@
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt lock">coming soon</p>
                             <div class="li__content">
                                 <div class="cover"></div>
-                                <div class="grid_layout">
-                                    <p class="light-title">Name of the project</p>
-                                    <p class="descrpt">This should be a description of the project. Activities, Goal, Achievements.</p>
+                                <div class="grid__layout">
+                                    <p class="light-title start-col-3">Name of the project</p>
+                                    <p class="descrpt col-2">This should be a description of the project. Activities, Goal, Achievements.</p>
                                     <a class="btn-reset btn">
                                         <p class="title">See online version</p>
                                         <div class="btn-icon">
@@ -264,9 +268,9 @@
             </section>
             <section id="services">
                 <div class="container">
-                    <div class="service-capture__wrap">
-                        <p class="section-id">07</p>
-                        <h3 class="light-title">Services</h3>
+                    <div class="grid__layout">
+                        <p class="section-id col-2">07</p>
+                        <h3 class="light-title col-1">Services</h3>
                     </div>
                     <ul class="accordion list-reset">
                         <li class="accordion__li s1">
@@ -333,10 +337,10 @@
             </section>
             <footer id="contacts">
                 <div class="container">
-                    <div class="contacts__title">
-                        <p class="section-id">08</p>
-                        <p class="descpt">Want to work<br>together?</p>
-                        <p class="descpt">Send me a <br>message!</p>
+                    <div class="grid__layout contacts_capture">
+                        <p class="section-id col-2">08</p>
+                        <p class="descpt col-1">Want to work<br>together?</p>
+                        <p class="descpt col-1">Send me a <br>message!</p>
                     </div>
                     <div class="contacts__content">
                         <div class="mail__wrap">
@@ -347,14 +351,14 @@
                             <path d="M206.667 1.83373L340.792 130.682C341.491 131.333 342.046 132.111 342.425 132.972C342.805 133.833 343 134.758 343 135.693C343 136.627 342.805 137.553 342.425 138.413C342.046 139.274 341.491 140.053 340.792 140.703L206.667 269.552C205.232 270.586 203.457 271.088 201.668 270.965C199.879 270.843 198.196 270.105 196.927 268.887C195.659 267.668 194.891 266.051 194.764 264.333C194.637 262.614 195.159 260.909 196.235 259.53L317.507 142.851L7.71505 142.851C5.73882 142.851 3.84354 142.097 2.44613 140.754C1.04872 139.412 0.263666 137.591 0.263666 135.693C0.263666 133.794 1.04872 131.974 2.44613 130.631C3.84353 129.289 5.73882 128.534 7.71505 128.534L317.507 128.534L196.235 11.8552C195.159 10.4768 194.636 8.77163 194.764 7.05285C194.891 5.3341 195.659 3.71709 196.927 2.49868C198.196 1.28026 199.879 0.542228 201.668 0.420096C203.457 0.297934 205.232 0.799857 206.667 1.83373Z" fill="#070707"/>
                         </svg>
                     </div>
-                    <div class="contacts_social">
-                        <p class="descpt name">Grigory<br>Tadevosyan</p>
-                        <div class="social">
+                    <div class="grid__layout contacts_social">
+                        <p class="descpt name col-1">Grigory<br>Tadevosyan</p>
+                        <div class="social col-2">
                             <a href="https://twitter.com/geotaderyx" class="underline-hover social__link">Twitter</a>
                             <a href="https://github.com/slaed-tech" class="underline-hover social__link">GitHub</a>
                             <a href="https://www.linkedin.com/in/georgy-tadevosyan-00515520a/" target="_blank" class="underline-hover social__link">LinkedIn</a>
                         </div>
-                        <p class="descpt capt">CREATIVE DEVELOPER</p>
+                        <p class="descpt capt col-3">CREATIVE DEVELOPER</p>
                     </div>
                 </div>
             </footer>
