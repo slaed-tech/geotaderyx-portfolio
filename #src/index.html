@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="img/logo.ico" type="image/x-icon">
@@ -17,7 +18,7 @@
     <header id="header">
         <div class="container">
             <a href="/" class="logo-btn link-1"><span data-hover="geotaderyx">geotaderyx</span></a>
-            <a href="" class="change-theme-btn"></a>
+            <!-- <a href="" class="change-theme-btn"></a> -->
             <a style="color: green;" class="contacts-btn">ON DEVELOPING</a>
             <a href="#contacts" class="contacts-btn link-1"><span data-hover="contacts">contacts</span></a>
         </div>
@@ -27,8 +28,8 @@
             <section id="hero">
                 <div class="container">
                     <div class="first_floor hero__wrap">
-                        <h1 class="hero__title">INDEPENTED</h1>
-                        <picture><source srcset="img/header-1.webp" type="image/webp"><img src="img/header-1.jpg" alt="workstyle"></picture>
+                        <h1 class="hero__title" data-aos="fade-up" data-aos-delay="100">INDEPENTED</h1>
+                        <img class="hero__img-1 cover-img" data-aos="zoom-in" data-aos-delay="1000" src="img/header-1.webp" alt="workstyle">
                     </div>
                     <div class="second_floor hero__wrap">
                         <div class="content-left">
@@ -39,14 +40,14 @@
                             </div>
                         </div>
                         <div class="content-right">
-                            <h1 class="hero__title">FRONT-END</h1>
-                            <picture><source srcset="img/header-2.webp" type="image/webp"><img src="img/header-2.jpg" alt="workstyle"></picture>
-                            <h1 class="hero__title">& UX/UI</h1>
+                            <h1 class="hero__title col-2" data-aos="fade-up" data-aos-delay="400">FRONT-END</h1>
+                            <img class="hero__img-2 cover-img" src="img/header-2.webp" data-aos="zoom-in" data-aos-delay="1300" alt="workstyle">
+                            <h1 class="hero__title" data-aos="fade-up" data-aos-delay="400">& UX/UI</h1>
                         </div>
                     </div>
-                    <div class="third_floor-wrap hero__wrap">
-                        <h1 class="hero__title">DEVELOPER</h1>
-                        <svg class="arrow" width="150" height="190" viewBox="0 0 150 190" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg">
+                    <div class="third_floor hero__wrap">
+                        <h1 class="hero__title" data-aos="fade-up" data-aos-delay="700">DEVELOPER</h1>
+                        <svg class="arrow" data-aos="fade-down" data-aos-delay="1500" width="150" height="190" viewBox="0 0 150 190" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg">
                             <path d="M149.206 114.422L77.7778 188.776C77.4171 189.163 76.9854 189.471 76.5082 189.681C76.031 189.892 75.5182 190 75 190C74.4818 190 73.969 189.892 73.4918 189.681C73.0146 189.471 72.5829 189.163 72.2222 188.776L0.793655 114.422C0.220524 113.627 -0.057726 112.643 0.00998857 111.651C0.0777031 110.659 0.486835 109.726 1.16228 109.023C1.83772 108.32 2.73414 107.894 3.68695 107.823C4.63977 107.753 5.58503 108.043 6.34921 108.639L71.0317 175.867V4.13077C71.0317 3.03522 71.4498 1.98454 72.194 1.20987C72.9382 0.435205 73.9476 0 75 0C76.0524 0 77.0618 0.435205 77.806 1.20987C78.5502 1.98454 78.9683 3.03522 78.9683 4.13077V175.867L143.651 108.639C144.415 108.043 145.36 107.753 146.313 107.823C147.266 107.894 148.162 108.32 148.838 109.023C149.513 109.726 149.922 110.659 149.99 111.651C150.058 112.643 149.779 113.627 149.206 114.422Z" fill="#070707"/>
                         </svg>                            
                     </div>
@@ -57,8 +58,8 @@
                     <div class="grid__layout">
                         <p class="section-id col-1">01</p>
                         <div class="about-me-photo__wrap col-2 ">
-                            <img src="img/me-wb.jpg" class="my-photo" alt="my photo">
-                            <h2 class="strong-title">CREATIVE DEVELOPER</h2>
+                            <img src="img/me-wb.jpg" data-aos="fade-in" data-aos-delay="0" class="my-photo" alt="my photo">
+                            <h2 class="strong-title" data-aos="fade-up" data-aos-delay="300">CREATIVE DEVELOPER</h2>
                         </div> 
                     </div>
                 </div>
@@ -70,21 +71,21 @@
                         <h3 class="light-title start-col-3 end-col-3">About me</h3>
                         <div class="text__wrap col-2">
                             <p class="descrpt">My name is George and I am a Front-end developer & UX/UI Designer. At the moment I live in the capital of Ukraine, Kyiv.</p>
-                            <p class="descrpt">I studied and actively study programming for 2 years, of which I spent 1 years studying web technologies. I have been designing almost all my life - from drawing primitive figures to highlighting the meaning of projects through symbolism. I actively participate in all possible projects, open to collaborations and new ideas.</p>
+                            <p class="descrpt">I have studied and actively study the needs of businesses in the spectrum of web technologies, backed up by learning the required skills to fulfill business needs. If it's easier - I'll do what you want, but better. I actively participate in all possible projects, open to collaborations and new ideas.</p>
                         </div>
-                        <p class="descrpt start-col-6 end-col-6">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends and find new stories for us.</p>
+                        <p class="descrpt start-col-6 end-col-6">When I'm not working, I like to play football and walk around beautiful Kyiv with my friends.</p>
                     </div>
                 </div>
             </section>
             <section id="featured-projects">
                 <div class="container">
                     <h2 class="strong-title">Featured projects</h2>
-                    <div class="featured-projects__fp fp1">
+                    <div class="featured-projects__fp fp1" data-aos="fade-up" data-aos-delay="100">
                         <div class="grid__layout">
-                            <p class="section-id col-2">03</p>
-                            <h3 class="light-title col-1">ARTICLE</h3>
-                            <p class="descrpt col-2">ARTICLE - this is a separate created layout for the needs of publishing articles for an existing project of a construction company.</p>
-                            <a href="https://slaed-tech.github.io/article/" target="_blank" class="btn-reset btn">
+                            <p class="section-id col-2">01</p>
+                            <h3 class="light-title col-1">NEXA</h3>
+                            <p class="descrpt col-2">All you have to do is sit back and relax, getting regular updates on your phone and quietly watching your construction of your house.</p>
+                            <a href="http://nexauniverse.com/" target="_blank" class="btn-reset btn">
                                 <p class="title">See online version</p>
                                 <div class="btn-icon">
                                     <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
@@ -99,21 +100,22 @@
                         <div class="splide" role="group">
                             <div class="splide__track">
                                 <ul class="splide__list">
-                                    <li class="splide__slide"><video width="100%" height="100%" autoplay loop muted src="video/article-main.mp4"></video></li>
-                                    <li style="background-image: url('img/ARTICLE/Screenshot_2.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/ARTICLE/Screenshot_3.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/ARTICLE/Screenshot_4.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/ARTICLE/Screenshot_5.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/ARTICLE/Screenshot_6.webp');" class="splide__slide"></li>
+                                    <li class="splide__slide"><video width="100%" height="100%" autoplay loop muted src="video/nexa-main.mp4"></video></li>
+                                    <li class="splide__slide"><img src="img/nexa/Screenshot_1.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/nexa/Screenshot_4.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/nexa/Screenshot_5.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/nexa/Screenshot_7.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/nexa/Screenshot_8.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/nexa/Screenshot_9.webp" class="cover-img" alt="case image"></li>
                                 </ul>
                           </div>
                         </div>
                     </div>
-                    <div class="featured-projects__fp fp2">
+                    <div class="featured-projects__fp fp2" data-aos="fade-up" data-aos-delay="100">
                         <div class="grid__layout">
-                            <p class="section-id col-2">03</p>
+                            <p class="section-id col-2">02</p>
                             <h3 class="light-title col-1">GOLDEN SAKURA</h3>
-                            <p class="descrpt col-2">GOLDEN SAKURA - is a sushi restaurant located in Estonia. The task was to redesign and increase conversion. Customers were satisfied, and it became easier for their client to use the site.</p>
+                            <p class="descrpt col-2">Hungry, but too lazy to go somewhere? Rather, go to the website of the sushiri Golden Sakura!</p>
                             <a href="https://goldensakura.ee/" target="_blank" class="btn-reset btn">
                                 <p class="title">See online version</p>
                                 <div class="btn-icon">
@@ -130,19 +132,19 @@
                             <div class="splide__track">
                                 <ul class="splide__list">
                                     <li class="splide__slide"><video width="100%" height="100%" autoplay loop muted src="video/golden-main.mp4"></video></li>
-                                    <li style="background-image: url('img/GoldenSakura/photo_2022-05-24_23-53-44.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/GoldenSakura/Screenshot_2.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/GoldenSakura/Screenshot_8.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/GoldenSakura/Screenshot_4.webp');" class="splide__slide"></li>
+                                    <li class="splide__slide"><img src="img/GoldenSakura/photo_2022-05-24_23-53-44.jpg" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/GoldenSakura/Screenshot_2.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/GoldenSakura/Screenshot_8.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/GoldenSakura/Screenshot_4.webp" class="cover-img" alt="case image"></li>
                                 </ul>
                           </div>
                         </div>
                     </div>
-                    <div class="featured-projects__fp fp3">
+                    <div class="featured-projects__fp fp3" data-aos="fade-up" data-aos-delay="100">
                         <div class="grid__layout">
                             <p class="section-id col-2">03</p>
                             <h3 class="light-title col-1">W STUDIO</h3>
-                            <p class="descrpt col-2">W STUDIO - is an elite interior design studio in Kyiv. The task was to layout the layout on the Tilda constructor.</p>
+                            <p class="descrpt col-2">W STUDIO — elite interior design of houses, cottages and apartments.</p>
                             <a href="https://w-studio-design.com/" target="_blank" class="btn-reset btn">
                                 <p class="title">See online version</p>
                                 <div class="btn-icon">
@@ -159,13 +161,46 @@
                             <div class="splide__track">
                                 <ul class="splide__list">
                                     <li class="splide__slide"><video width="100%" height="100%" autoplay loop muted src="video/wstudio-main.mp4"></video></li>
-                                    <li style="background-image: url('img/Wstudio/s1.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/Wstudio/s2.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/Wstudio/s3.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/Wstudio/s4.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/Wstudio/s5.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/Wstudio/s6.webp');" class="splide__slide"></li>
-                                    <li style="background-image: url('img/Wstudio/s7.webp');" class="splide__slide"></li>
+                                    <li class="splide__slide"><img src="img/Wstudio/s1.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/Wstudio/s2.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/Wstudio/s3.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/Wstudio/s4.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/Wstudio/s5.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/Wstudio/s6.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/Wstudio/s7.webp" class="cover-img" alt="case image"></li>
+                                </ul>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="featured-projects__fp fp4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="grid__layout">
+                            <p class="section-id col-2">04</p>
+                            <h3 class="light-title col-1">Logochopper</h3>
+                            <p class="descrpt col-2">Logochopper — a team of designers and marketers, helping small and medium-sized businesses to revitalize, along the path of a cirque and a memorable corporate identity.</p>
+                            <a href="https://slaed-tech.github.io/logochopper/" target="_blank" class="btn-reset btn">
+                                <p class="title">See online version</p>
+                                <div class="btn-icon">
+                                    <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                    </svg>
+                                    <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="splide" role="group">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide"><video width="100%" height="100%" autoplay loop muted src="video/logochopper-main.mp4"></video></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_1.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_2.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_3.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_4.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_5.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_6.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_7.webp" class="cover-img" alt="case image"></li>
+                                    <li class="splide__slide"><img src="img/logochopper/Screenshot_8.webp" class="cover-img" alt="case image"></li>
                                 </ul>
                           </div>
                         </div>
@@ -179,13 +214,13 @@
                         <h3 class="light-title col-1">Projects</h3>
                     </div>
                     <ul class="accordion list-reset">
-                        <li class="accordion__li p1">
-                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">PORTFOLIO</p>
+                        <li class="accordion__li p1" data-aos="fade-up" data-aos-delay="100">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">Geotaderyx</p>
                             <div class="li__content">
-                                <div style="background-image: url('img/Portfolio/Screenshot_1.png');" class="cover"></div>
+                                <img class="cover cover-img" src="img/Portfolio/Screenshot_1.png" alt="case image">
                                 <div class="grid__layout">
-                                    <p class="light-title start-col-3">Portflolio</p>
-                                    <p class="descrpt col-2">This is my own portfolio site. Created from scratch alone to showcase my portfolio and assert my competence</p>
+                                    <p class="light-title start-col-3">Geotaderyx</p>
+                                    <p class="descrpt col-2">This is my own portfolio site. Created from scratch alone to showcase my portfolio and assert my competence.</p>
                                     <a class="btn-reset btn lock">
                                         <p class="title">See online version</p>
                                         <div class="btn-icon">
@@ -200,14 +235,14 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="accordion__li p2">
-                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">BEAUTY STYLE</p>
+                        <li class="accordion__li p2" data-aos="fade-up" data-aos-delay="100">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">KONSTRUCTIV</p>
                             <div class="li__content">
-                                <div style="background-image: url('img/BS/Screenshot_1.png');" class="cover"></div>
+                                <img class="cover cover-img" src="img/tseh/p_cover.jpg" alt="case image">
                                 <div class="grid__layout">
-                                    <p class="light-title start-col-3">BEAUTY STYLE</p>
-                                    <p class="descrpt col-2">BEAUTY STYLE - is a sewing business providing various embroidery services. The task was to layout the finished layout. There were some problems, but at the end the customer was satisfied.</p>
-                                    <a href="https://beauty-style.unixstorm.org/" class="btn-reset btn">
+                                    <p class="light-title start-col-3">KONSTRUCTIV</p>
+                                    <p class="descrpt col-2">KONSTRUCTIV — sewing workshop, tailoring everything from car covers to children's toys.</p>
+                                    <a href="https://tseh-1.tilda.ws/" class="btn-reset btn">
                                         <p class="title">See online version</p>
                                         <div class="btn-icon">
                                             <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
@@ -221,7 +256,28 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="accordion__li p3">
+                        <li class="accordion__li p3" data-aos="fade-up" data-aos-delay="100">
+                            <p onclick="javascript:accordionExpand(this);" class="strong-title capt">ARTICLES</p>
+                            <div class="li__content">
+                                <img class="cover cover-img" src="img/ARTICLE/p_cover.jpg" alt="case image">
+                                <div class="grid__layout">
+                                    <p class="light-title start-col-3">ARTICLES</p>
+                                    <p class="descrpt col-2">ARTICLES — this is a created separate layout for the article site that will be used by the construction company for the marketing funnel.</p>
+                                    <a href="https://slaed-tech.github.io/article" class="btn-reset btn">
+                                        <p class="title">See online version</p>
+                                        <div class="btn-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion__li p4" data-aos="fade-up" data-aos-delay="100">
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt lock">coming soon</p>
                             <div class="li__content">
                                 <div class="cover"></div>
@@ -242,7 +298,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="accordion__li p4">
+                        <li class="accordion__li p5" data-aos="fade-up" data-aos-delay="100">
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt lock">coming soon</p>
                             <div class="li__content">
                                 <div class="cover"></div>
@@ -273,10 +329,10 @@
                         <h3 class="light-title col-1">Services</h3>
                     </div>
                     <ul class="accordion list-reset">
-                        <li class="accordion__li s1">
+                        <li class="accordion__li s1" data-aos="fade-up" data-aos-delay="100">
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt">Front-End Develop</p>
                             <div class="li__content active">
-                                <div style="background-image: url('img/front-end-dev.jpg');" class="cover"></div>
+                                <img class="cover cover-img" src="img/front-end-dev.webp" alt="services image">
                                 <div class="text__wrap">
                                     <div class="__wrap">
                                         <p class="descrpt">I provide Front-End services. The whole development process depends on the level of complexity, but in general, 5 stages can be distinguished.</p>
@@ -302,10 +358,10 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="accordion__li s1">
+                        <li class="accordion__li s2" data-aos="fade-up" data-aos-delay="100">
                             <p onclick="javascript:accordionExpand(this);" class="strong-title capt">UX/UI Desing</p>
                             <div class="li__content">
-                                <div style="background-image: url('img/ux-ui-design.jpg');" class="cover"></div>
+                                <img class="cover cover-img" src="img/ux-ui-design.webp" alt="services image">
                                 <div class="text__wrap">
                                     <div class="__wrap">
                                         <p class="descrpt">I provide UX/UI services. The whole development process depends on the task and goal, but in general, 6 stages can be distinguished.</p>
@@ -367,6 +423,7 @@
     
     <script src="js/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         $('a[href^="#"]').on("click", function (e) {
             e.preventDefault();

@@ -10998,128 +10998,11 @@ return jQuery;
     root.butter = new Butter();
 
 })(this);
-// butter.js
-
-(function(root){
-    var Butter = function() {
-
-        var self = this;
-
-        this.defaults = {
-            wrapperId: 'butter',
-            wrapperDamper: 0.07,
-            cancelOnTouch: false
-        }
-        
-        this.validateOptions = function(ops) {
-            for (var prop in ops) {
-                if (self.defaults.hasOwnProperty(prop)) {
-                    Object.defineProperty(self.defaults, prop, {value: Object.getOwnPropertyDescriptor(ops, prop).value})
-                }
-            }
-        }
-
-        this.wrapperDamper;
-        this.wrapperId;
-        this.cancelOnTouch;
-        this.wrapper;
-        this.wrapperOffset = 0;
-        this.animateId;
-        this.resizing = false;
-        this.active = false;
-        this.wrapperHeight;
-        this.bodyHeight;
-    };
-
-    Butter.prototype = {
-
-        init: function(options) {
-            if (options) {
-                this.validateOptions(options);
-            }
-
-            this.active = true;
-            this.resizing = false;
-            this.wrapperDamper = this.defaults.wrapperDamper;
-            this.wrapperId = this.defaults.wrapperId;
-            this.cancelOnTouch = this.defaults.cancelOnTouch;
-
-            this.wrapper = document.getElementById(this.wrapperId);
-            this.wrapper.style.position = 'fixed';
-            this.wrapper.style.width = '100%';
-
-            this.wrapperHeight = this.wrapper.clientHeight;
-            document.body.style.height = this.wrapperHeight + 'px';
-
-            window.addEventListener('resize', this.resize.bind(this));
-            if (this.cancelOnTouch) {
-                window.addEventListener('touchstart', this.cancel.bind(this));
-            }
-            this.wrapperOffset = 0.0;
-            this.animateId = window.requestAnimationFrame(this.animate.bind(this));
-
-            // window.addEventListener('load', this.resize.bind(this));
-        },
-
-        wrapperUpdate: function() {
-            var scrollY = (document.scrollingElement != undefined) ? document.scrollingElement.scrollTop : (document.documentElement.scrollTop || 0.0);
-            this.wrapperOffset += (scrollY - this.wrapperOffset) * this.wrapperDamper;
-            this.wrapper.style.transform = 'translate3d(0,' + (-this.wrapperOffset.toFixed(2)) + 'px, 0)';
-        },
-
-        checkResize: function() {
-            if (this.wrapperHeight != this.wrapper.clientHeight) {
-                this.resize();
-            }
-        },
-
-        resize: function() {
-            var self = this;
-            if (!self.resizing) {
-                self.resizing = true;
-                window.cancelAnimationFrame(self.animateId);
-                window.setTimeout(function() {
-                    self.wrapperHeight = self.wrapper.clientHeight;
-                    if (parseInt(document.body.style.height) != parseInt(self.wrapperHeight)) {
-                        document.body.style.height = self.wrapperHeight + 'px';
-                    }
-                    self.animateId = window.requestAnimationFrame(self.animate.bind(self));
-                    self.resizing = false;
-                }, 150)
-            }
-        },
-
-        animate: function() {
-            this.checkResize();
-            this.wrapperUpdate();
-            this.animateId = window.requestAnimationFrame(this.animate.bind(this));
-        },
-
-        cancel: function() {
-            if (this.active) {
-                window.cancelAnimationFrame(this.animateId);
-
-                window.removeEventListener('resize', this.resize);
-                window.removeEventListener('touchstart', this.cancel);
-                this.wrapper.removeAttribute('style');
-                document.body.removeAttribute('style');
-
-                this.active = false;
-                this.wrapper = "";
-                this.wrapperOffset = 0;
-                this.resizing = true;
-                this.animateId = "";
-            }
-        },
-    };
-
-    root.butter = new Butter();
-
-})(this);
 // VARS
 const INIT_SPLIDE_ACTIVE = true;
 const INIT_BUTTER_ACTIVE = true;
 const CUSTOM_CURSOR_ACTIVE = true;
+const INIT_AOS_ACTIVE = true;
 
 // ON LOAD DOAM
 document.addEventListener("DOMContentLoaded", () => {
@@ -11129,9 +11012,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (INIT_BUTTER_ACTIVE) initButter();
 
     if (CUSTOM_CURSOR_ACTIVE) cursorInit();
+    
+    if (INIT_AOS_ACTIVE) initAOS();
 })
 
 // FUNCTIONS
+function initAOS() {
+    AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: true, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-center', // defines which position of the element regarding to window should trigger the animation
+    });
+}
+
 function initSplide() {
     let splides = document.querySelectorAll(".splide");
     for (let i = 0; i < splides.length; i++) {
@@ -11285,3 +11194,121 @@ function copyText(e) {
             console.log('error: ', err)
         })
 }
+// butter.js
+
+(function(root){
+    var Butter = function() {
+
+        var self = this;
+
+        this.defaults = {
+            wrapperId: 'butter',
+            wrapperDamper: 0.07,
+            cancelOnTouch: false
+        }
+        
+        this.validateOptions = function(ops) {
+            for (var prop in ops) {
+                if (self.defaults.hasOwnProperty(prop)) {
+                    Object.defineProperty(self.defaults, prop, {value: Object.getOwnPropertyDescriptor(ops, prop).value})
+                }
+            }
+        }
+
+        this.wrapperDamper;
+        this.wrapperId;
+        this.cancelOnTouch;
+        this.wrapper;
+        this.wrapperOffset = 0;
+        this.animateId;
+        this.resizing = false;
+        this.active = false;
+        this.wrapperHeight;
+        this.bodyHeight;
+    };
+
+    Butter.prototype = {
+
+        init: function(options) {
+            if (options) {
+                this.validateOptions(options);
+            }
+
+            this.active = true;
+            this.resizing = false;
+            this.wrapperDamper = this.defaults.wrapperDamper;
+            this.wrapperId = this.defaults.wrapperId;
+            this.cancelOnTouch = this.defaults.cancelOnTouch;
+
+            this.wrapper = document.getElementById(this.wrapperId);
+            this.wrapper.style.position = 'fixed';
+            this.wrapper.style.width = '100%';
+
+            this.wrapperHeight = this.wrapper.clientHeight;
+            document.body.style.height = this.wrapperHeight + 'px';
+
+            window.addEventListener('resize', this.resize.bind(this));
+            if (this.cancelOnTouch) {
+                window.addEventListener('touchstart', this.cancel.bind(this));
+            }
+            this.wrapperOffset = 0.0;
+            this.animateId = window.requestAnimationFrame(this.animate.bind(this));
+
+            // window.addEventListener('load', this.resize.bind(this));
+        },
+
+        wrapperUpdate: function() {
+            var scrollY = (document.scrollingElement != undefined) ? document.scrollingElement.scrollTop : (document.documentElement.scrollTop || 0.0);
+            this.wrapperOffset += (scrollY - this.wrapperOffset) * this.wrapperDamper;
+            this.wrapper.style.transform = 'translate3d(0,' + (-this.wrapperOffset.toFixed(2)) + 'px, 0)';
+        },
+
+        checkResize: function() {
+            if (this.wrapperHeight != this.wrapper.clientHeight) {
+                this.resize();
+            }
+        },
+
+        resize: function() {
+            var self = this;
+            if (!self.resizing) {
+                self.resizing = true;
+                window.cancelAnimationFrame(self.animateId);
+                window.setTimeout(function() {
+                    self.wrapperHeight = self.wrapper.clientHeight;
+                    if (parseInt(document.body.style.height) != parseInt(self.wrapperHeight)) {
+                        document.body.style.height = self.wrapperHeight + 'px';
+                    }
+                    self.animateId = window.requestAnimationFrame(self.animate.bind(self));
+                    self.resizing = false;
+                }, 150)
+            }
+        },
+
+        animate: function() {
+            this.checkResize();
+            this.wrapperUpdate();
+            this.animateId = window.requestAnimationFrame(this.animate.bind(this));
+        },
+
+        cancel: function() {
+            if (this.active) {
+                window.cancelAnimationFrame(this.animateId);
+
+                window.removeEventListener('resize', this.resize);
+                window.removeEventListener('touchstart', this.cancel);
+                this.wrapper.removeAttribute('style');
+                document.body.removeAttribute('style');
+
+                this.active = false;
+                this.wrapper = "";
+                this.wrapperOffset = 0;
+                this.resizing = true;
+                this.animateId = "";
+            }
+        },
+    };
+
+    root.butter = new Butter();
+
+})(this);

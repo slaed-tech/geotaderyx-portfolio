@@ -15,7 +15,7 @@
 @import "normalize";
 
 // VARS
-$bg_color: #E4E4E4;
+$bg_color: #e6e6e6;
 $body_color: #070707;
 
 $body_fs: 24px;
@@ -64,15 +64,11 @@ $col_w: calc(100% / 6);
 //! MAIN STYLE
 * {
     scrollbar-width: auto;
-    scrollbar-color: $body_color $bg_color;
 }
 
 *::-webkit-scrollbar {
     width: 6px;
-}
-
-*::-webkit-scrollbar-track {
-    background: transparent;
+    background-color: $bg_color;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -88,8 +84,8 @@ $col_w: calc(100% / 6);
     padding: 0;
 }
 
-img {
-    max-width: 100%;
+.cover-img {
+    object-fit: cover;
 }
 
 html {
@@ -264,7 +260,7 @@ a.link-1 {
         height: 2px;
         width: 100%;
         background-color: $body_color;
-        transition: all .6s ease-in-out;
+        transition: all .5s ease-in-out;
         margin-right: 50px;
     }
     
@@ -277,7 +273,7 @@ a.link-1 {
         height: 2px;
         width: 100%;
         background-color: $body_color;
-        transition: all .6s ease-in-out;
+        transition: all .5s ease-in-out;
     }
     &:hover::after {
         transform: translate(calc(100% + 50px)) !important;
@@ -458,36 +454,52 @@ header {
     .hero__wrap {
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
-
-    .second_floor .content-left {
-        display: flex;
-        align-items: flex-start;
-        max-width: 30%;
-        
-
-        .light-title {
-            font-size: 16px !important;
-            margin-right: 100px;
+    .first_floor {
+        .hero__title {
+            margin-right: 60px;   
         }
-        .descrpt {
-            font-size: 16px !important;
-        
-            &:nth-child(1) {
-                margin-bottom: 28px;
+        .hero__img-1 {
+            height: 156px;
+        }
+    }
+    .second_floor { 
+        justify-content: space-between;
+
+        .content-left {
+            display: flex;
+            align-items: flex-start;
+            max-width: 32%;
+
+            .light-title {
+                font-size: 18px;
+                margin-right: 100px;
+            }
+            .descrpt {
+                font-size: 18px;
+            
+                &:nth-child(1) {
+                    margin-bottom: 28px;
+                }
+            }
+        }
+        .content-right {
+            display: grid;
+            grid-template-columns: 30% 70%;
+    
+            .hero__title {
+                justify-self: flex-end;
+                text-align: right;
+            }
+            .hero__img-2 {
+                justify-self: flex-end;
+                align-self: center;
+                width: 100%;
             }
         }
     }
-    .second_floor .content-right {
-        display: flex;
-        flex-wrap: wrap;
-        text-align: right;
-        justify-content: right;
-
-        img {
-            margin-right: 30px;
-        }
+    .third_floor {
+        justify-content: space-between;
     }
 }
 
@@ -568,9 +580,9 @@ header {
         .splide__list {
             align-items: center;
 
-            li {
-                background-size: cover;
-                background-position: center;
+            li .cover-img {
+                width: 100%;
+                height: 100%;
             }
         }
     }
@@ -622,11 +634,9 @@ header {
             
             .cover {
                 margin-bottom: 50px;
-                height: 900px;
+                height: 700px;
                 width: 100%;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
+                object-fit: cover;
             }
             .grid__layout {
                 justify-content: end;
@@ -637,7 +647,7 @@ header {
             }
         }
         .li__content.active {
-            height: 1115px;
+            height: 915px;
             margin-top: 50px;
             margin-bottom: 80px;
         }
@@ -646,6 +656,9 @@ header {
         max-width: 450px;
     }
     .p1 .descrpt {
+        max-width: 450px;
+    }
+    .p3 .descrpt {
         max-width: 450px;
     }
 }
@@ -760,12 +773,13 @@ header {
 
 @media screen and (max-width: 1550px) {
     #hero img {
-        height: 120px;
+        height: 120px !important;
     }
     h1 {
-        font-size: 150px;
+        font-size: 170px;
     }
-    #hero .second_floor .content-left .descrpt:nth-child(2) {
-        display: none;
+    #hero .second_floor .content-left .descrpt {
+        font-size: 14px;
     }
+    
 }
